@@ -1,0 +1,13 @@
+.notifregister  {
+    padding-top: -110px;
+
+}
+textarea {
+    resize: none;
+}
+
+#count_message {
+  background-color: smoke;
+  margin-top: -20px;
+  margin-right: 5px;
+}
