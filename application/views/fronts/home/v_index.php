@@ -87,7 +87,7 @@
                        <div class="radius-top">
                          <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
                          <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
-                                                 else { echo " <img src='".base_url()."assets/frontend/imgp/".$post->foto_h."'> ";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
                                                  ?>
                           </a>
 
