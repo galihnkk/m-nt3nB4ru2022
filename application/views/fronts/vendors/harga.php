@@ -63,15 +63,15 @@
 											<div class="contact-line">
 												<a target="_blank" href="https://api.whatsapp.com/send?phone=0<?php echo $user_bisnis->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $user_bisnis->namabisnis?>%20di%20Mantenbaru.%20Bisa%20bantu%20saya?" class="button-s-2 bg-4 m-right"><i class="fa fa-whatsapp"> WA</i></a>
                         <?php if(empty($user_bisnis->fb)) { ?>
-                        <?php }else if{ ?>
+                        <?php }else{ ?>
                           <a target="_blank" href="<?php echo $user_bisnis->fb?>" class="button-s-2 bg-7 m-right"><i class="fa fa-facebook"> FB</i></a>
                         <?php } ?>
                         <?php if(empty($user_bisnis->ig)) { ?>
-                        <?php }else if{ ?>
+                        <?php }else{ ?>
                           <a target="_blank" href="<?php echo $user_bisnis->ig?>" class="button-s-2 bg-1 m-right"><i class="fa fa-instagram"> IG</i></a>
                         <?php } ?>
                         <?php if(empty($user_bisnis->ytb)) { ?>
-                        <?php }else if{ ?>
+                        <?php }else{ ?>
                           <a target="_blank" href="<?php echo $user_bisnis->ytb?>" class="button-s-2 bg-5 m-right"><i class="fa fa-youtube"> YT</i></a>
                         <?php } ?>
 
