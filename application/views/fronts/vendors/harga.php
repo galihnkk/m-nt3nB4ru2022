@@ -61,18 +61,18 @@
 											<div class="contact-line"><p><i class="fa fa-map-marker"></i><a href="#"> <?php echo $kecamatan->nama_kec?> - <?php echo $kabupaten->nama?></p></a></div>
 											<div class="contact-line"><p><strong>Media Sosial</strong></p></div>
 											<div class="contact-line">
-												<a target="_blank" href="https://api.whatsapp.com/send?phone=620<?php echo $user_bisnis->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $user_bisnis->namabisnis?>%20di%20Mantenbaru.%20Bisa%20bantu%20saya?" class="button-s-2 bg-4 m-right"><i class="fa fa-whatsapp"> WA</i></a>
+												<a target="_blank" href="https://api.whatsapp.com/send?phone=+62<?php echo $user_bisnis->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $user_bisnis->namabisnis?>%20di%20Mantenbaru.%20Bisa%20bantu%20saya?" class="button-s-2 bg-4 m-right"><i class="fa fa-whatsapp"> WA</i></a>
                         <?php if(empty($user_bisnis->fb)) { ?>
                         <?php }else{ ?>
-                          <a target="_blank" href="<?php echo $user_bisnis->fb?>" class="button-s-2 bg-7 m-right"><i class="fa fa-facebook"> FB</i></a>
+                          <a target="_blank" href="https://www.facebook.com/<?php echo $user_bisnis->fb?>" class="button-s-2 bg-7 m-right"><i class="fa fa-facebook"> FB</i></a>
                         <?php } ?>
                         <?php if(empty($user_bisnis->ig)) { ?>
                         <?php }else{ ?>
-                          <a target="_blank" href="<?php echo $user_bisnis->ig?>" class="button-s-2 bg-1 m-right"><i class="fa fa-instagram"> IG</i></a>
+                          <a target="_blank" href="https://www.instagram.com/<?php echo $user_bisnis->ig?>" class="button-s-2 bg-1 m-right"><i class="fa fa-instagram"> IG</i></a>
                         <?php } ?>
                         <?php if(empty($user_bisnis->ytb)) { ?>
                         <?php }else{ ?>
-                          <a target="_blank" href="<?php echo $user_bisnis->ytb?>" class="button-s-2 bg-5 m-right"><i class="fa fa-youtube"> YT</i></a>
+                          <a target="_blank" href="https://www.youtube.com/channel/<?php echo $user_bisnis->ytb?>" class="button-s-2 bg-5 m-right"><i class="fa fa-youtube"> YT</i></a>
                         <?php } ?>
 
 											</div>

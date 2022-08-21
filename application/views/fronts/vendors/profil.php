@@ -64,10 +64,20 @@
 											<div class="contact-line"><p><strong>Media Sosial</strong></p></div>
 											<div class="contact-line">
 												<a target="_blank" href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.%20Bisa%20bantu%20saya?" class="button-s-2 bg-4 m-right"><i class="fa fa-whatsapp"> WA</i></a>
-												<a target="_blank" href="https://www.facebook.com/<?php echo $post_v->fb?>" class="button-s-2 bg-7 m-right"><i class="fa fa-facebook"> FB</i></a>
-												<a target="_blank" href="https://www.instagram.com/<?php echo $post_v->ig?>" class="button-s-2 bg-1 m-right"><i class="fa fa-instagram"> IG</i></a>
-												<a target="_blank" href="https://www.youtube.com/channel/<?php echo $post_v->twitter?>" class="button-s-2 bg-5 m-right"><i class="fa fa-youtube"> YT</i></a>
-											</div>
+                        <?php if(empty($post_v->fb)) { ?>
+                        <?php }else{ ?>
+                          <a target="_blank" href="https://www.facebook.com/<?php echo $post_v->fb?>" class="button-s-2 bg-7 m-right"><i class="fa fa-facebook"> FB</i></a>
+                        <?php } ?>
+                        <?php if(empty($post_v->ig)) { ?>
+                        <?php }else{ ?>
+                          <a target="_blank" href="https://www.instagram.com/<?php echo $post_v->ig?>" class="button-s-2 bg-1 m-right"><i class="fa fa-instagram"> IG</i></a>
+                        <?php } ?>
+                        <?php if(empty($post_v->ytb)) { ?>
+                        <?php }else{ ?>
+                          <a target="_blank" href="https://www.youtube.com/channel/<?php echo $post_v->ytb?>" class="button-s-2 bg-5 m-right"><i class="fa fa-youtube"> YT</i></a>
+                        <?php } ?>
+                        
+                      </div>
 											<hr>
 											<div class="contact-line">
 												<center><a href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.%20Saya%20mau%20tanya-tanya%20dulu." class="c-button small bg-dr-blue-2 hv-dr-blue-2-o"><i class="fa fa-comments-o"> Konsultasi Free</i></a></center>
