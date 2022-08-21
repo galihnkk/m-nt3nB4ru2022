@@ -30,11 +30,6 @@
     <?php $company= $this->Crud_m->view_where('user_company', array('user_company_account'=> $user_bisnis->user_company_account))->row(); ?>
     <!-- <?php $this->load->view('fronts/loader')?>-->
     <?php $this->load->view('fronts/header')?>
-    <div class="inner-banner">
-
-  	</div>
-
-
 
   <div class="list-wrapper ">
   		<div class="container">
