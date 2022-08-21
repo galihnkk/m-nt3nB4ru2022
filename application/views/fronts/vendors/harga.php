@@ -83,7 +83,7 @@
 											<div class="share clearfix">
 											   <div class="contact-line"><p><strong>Bagikan :</strong></p></div>
                                               <p></p><li class="color-fb"><a href="http://www.facebook.com/sharer.php?u=<?php echo base_url("harga-detail/$post_h->judul_seo ") ?>" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo base_url("harga-detail/$post_h->judul_seo ")?>','newwindow','width=400,height=350');  return false;" title="Facebook" target="_blank" ><i class="fa fa-facebook" ></i>Facebook</a></li>
-                                              <li class="color-ig"><a href="whatsapp://send?text=Stop keraguan Kamu dan Pasangan! Cari tau <?php echo $user_bisnis->namabisnis ?> yang ada di Mantenbaru. Ada <?php echo $post_h->judul ?> dengan harga Rp<?php echo number_format($post_h->harga,0,',','.') ?> hanya dengan mengklik <?php echo base_url("harga-detail/$post_h->judul_seo ") ?> keraguan kamu dan pasangan bisa terselesaikan."><i class="fa fa-whatsapp"></i>Whatsapp</a></li>
+                                              <li class="color-ig"><a href="whatsapp://send?text=Stop keraguan Kamu dan Pasangan! Cari tau <?php echo $user_bisnis->namabisnis ?> yang ada di Mantenbaru. Ada <?php echo $post_h->judul ?> harga hanya <?php echo $post_h->judul ?> hanya dengan mengklik <?php echo base_url("harga-detail/$post_h->judul_seo ") ?> keraguan kamu dan pasangan bisa terselesaikan."><i class="fa fa-whatsapp"></i>Whatsapp</a></li>
 
                                             </div>
 					    </div>
@@ -133,8 +133,21 @@
 												    			     <br><br>
                     											   <div class="contact-line"><p><strong>Bagikan :</strong></p></div>
                                                                   <p></p><li class="color-fb"><a href="http://www.facebook.com/sharer.php?u=<?php echo base_url("harga-detail/$post_h->judul_seo ") ?>" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo base_url("harga-detail/$post_h->judul_seo ")?>','newwindow','width=400,height=350');  return false;" title="Facebook" target="_blank" ><i class="fa fa-facebook" ></i>Facebook</a></li>
-                                                                  <li class="color-ig"><a href="whatsapp://send?text=Stop keraguan Kamu dan Pasangan! Cari tau <?php echo $user_bisnis->namabisnis ?> yang ada di Mantenbaru.com. Ada <?php echo $post_h->judul ?> dengan harga Rp<?php echo number_format($post_h->harga,0,',','.') ?>  hanya dengan mengklik <?php echo base_url("harga-detail/$post_h->judul_seo ") ?> keraguan kamu dan pasangan bisa terselesaikan."><i class="fa fa-whatsapp"></i>Whatsapp</a></li>
-                                                                </div>
+                                                                  <?php
+                                                                  if(empty($post_h->harga_diskon)) { ?>
+                                                                    <li class="color-ig">
+                                                                      <a href="whatsapp://send?text=Stop keraguan Kamu dan Pasangan! Cari tau <?php echo $user_bisnis->namabisnis ?> yang ada di Mantenbaru.com. Ada <?php echo $post_h->judul ?> dengan harga <?php echo number_format($post_h->harga,0,',','.') ?>  hanya dengan mengklik <?php echo base_url("harga-detail/$post_h->judul_seo ") ?> keraguan kamu dan pasangan bisa terselesaikan.">
+                                                                        <i class="fa fa-whatsapp"></i>Whatsapp
+                                                                      </a>
+                                                                    </li>
+                                                                <?php }else if($a = $post_h->harga - $post_h->harga_diskon ){?>
+                                                                  <li class="color-ig">
+                                                                    <a href="whatsapp://send?text=Stop keraguan Kamu dan Pasangan! Cari tau <?php echo $user_bisnis->namabisnis ?> yang ada di Mantenbaru.com. Ada <?php echo $post_h->judul ?> dengan harga <del><?php echo number_format($post_h->harga,0,',','.') ?></del> Rp<?php echo number_format($a,0,',','.')?> hanya dengan mengklik <?php echo base_url("harga-detail/$post_h->judul_seo ") ?> keraguan kamu dan pasangan bisa terselesaikan.">
+                                                                      <i class="fa fa-whatsapp"></i>Whatsapp
+                                                                    </a>
+                                                                  </li>
+                                                                  <?php }?>
+                                </div>
 								 							</div>
 							 						</div>
 
