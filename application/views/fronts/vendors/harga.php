@@ -23,13 +23,13 @@
     <meta property="og:image" content="<?php echo base_url()?>assets/frontend/harga/<?php echo $post_h->foto_h?>">
     <meta property="og:image:url" content="<?php echo base_url()?>assets/frontend/harga/<?php echo $post_h->foto_h?>">
     <meta property="og:type" content="article">
-    <link rel="shortcut icon" href="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->favicon ?>"" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->favicon ?>" type="image/x-icon">
 
   <?php $this->load->view('fronts/css')?>
   </head>
   <body data-color="theme-1">
 
-    <!-- <?php $this->load->view('fronts/loader')?>-->
+    <?php $this->load->view('fronts/loader')?>
     <?php $this->load->view('fronts/header')?>
     <br><br><br><br>
 

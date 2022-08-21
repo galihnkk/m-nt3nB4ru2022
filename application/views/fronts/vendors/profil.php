@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="id">
+<?php $kecamatan= $this->Crud_m->view_where('kecamatan', array('id'=> $post_v->kecamatan))->row(); ?>
+<?php $kabupaten= $this->Crud_m->view_where('kabupaten', array('id'=> $post_v->kabupaten))->row(); ?>
+<?php $company= $this->Crud_m->view_where('user_company', array('user_company_account'=> $post_v->user_company_account))->row(); ?>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Mantenbaru | Mantenbaru Wedding Organizer</title>
-    <meta name="title" content="Vendor Pernikahan Terlengkap | Mantenbaru Wedding Organizer">
-    <meta name="site_url" content="<?php echo base_url()?>">
-    <meta name="description" content="">
-    <meta name="keywords" content="mantenbaru.com, mantenbaru, perencanaan investasi, vendor pernikahan, wedding organizer, wedding planner">
+    <title><?php echo $post_v->namabisnis?> | <?php echo $company->user_company_judul?> <?php echo $kecamatan->nama_kec?> - <?php echo $kabupaten->nama?></title>
+    <meta name="title" content="<?php echo $post_v->namabisnis?> | <?php echo $company->user_company_judul?> <?php echo $kecamatan->nama_kec?> - <?php echo $kabupaten->nama?>">
+    <meta name="site_url" content="<?php echo base_url()?>vendors/<?php echo $post_v->namabisnis_seo?>">
+    <meta name="description" content="<?php echo $post_v->tentangbisnis?>">
+    <meta name="keywords" content="<?=$identitas->meta_keyword ?>,<?php echo $post_v->katakunci?>">
     <meta NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="web_author" content="dhawyarkan.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta property="og:site_name" content="Mantenbaru">
-    <meta property="og:title" content="Vendor Pernikahan Terlengkap | Mantenbaru Wedding Organizer">
-    <meta property="og:description" content="">
-    <meta property="og:url" content="<?php echo base_url()?>">
-    <meta property="og:image" content="<?php echo base_url()?>assets/frontend/aspanel/img/logo.png">
-    <meta property="og:image:url" content="<?php echo base_url()?>assets/frontend/aspanel/img/logo.png">
+    <meta property="og:title" content="<?php echo $post_v->namabisnis?> | <?php echo $company->user_company_judul?> <?php echo $kecamatan->nama_kec?> - <?php echo $kabupaten->nama?> ">
+    <meta property="og:description" content="<?php echo $post_v->tentangbisnis?>">
+    <meta property="og:url" content="<?php echo base_url()?>vendors/<?php echo $post_v->namabisnis_seo?>">
+    <meta property="og:image" content="<?php echo base_url()?>assets/frontend/gambar_bisnis/<?php echo $post_v->gambar?>">
+    <meta property="og:image:url" content="<?php echo base_url()?>assets/frontend/gambar_bisnis/<?php echo $post_v->gambar?>">
     <meta property="og:type" content="article">
-    <link rel="shortcut icon" href="<?php echo base_url()?>assets/frontend/aspanel/img/fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->favicon ?>" type="image/x-icon">
 
     <?php $this->load->view('fronts/css')?>
   </head>
-  <?php $kecamatan= $this->Crud_m->view_where('kecamatan', array('id'=> $post_v->kecamatan))->row(); ?>
-  <?php $kabupaten= $this->Crud_m->view_where('kabupaten', array('id'=> $post_v->kabupaten))->row(); ?>
-  <?php $company= $this->Crud_m->view_where('user_company', array('user_company_account'=> $post_v->user_company_account))->row(); ?>
+
 
 
   <body data-color="theme-1">
-    <!-- <?php $this->load->view('fronts/loader')?>-->
+    <?php $this->load->view('fronts/loader')?>
     <?php $this->load->view('fronts/header')?>
     <div class="inner-banner">
   		<img class="center-image" src="<?php echo base_url()?>asset/frontend/aspanel/img/bghead.jpg" alt="">
@@ -87,7 +88,7 @@
 											   <div class="contact-line"><p><strong>Bagikan :</strong></p></div>
 
                                               <p></p><li class="color-fb"><a href="http://www.facebook.com/sharer.php?u=<?php echo base_url("vendors/$post_v->namabisnis_seo ") ?>" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo base_url("vendors/$post_v->namabisnis_seo ")?>','newwindow','width=400,height=350');  return false;" title="Facebook" target="_blank" ><i class="fa fa-facebook" ></i>Facebook</a></li>
-                                              <li class="color-ig"><a href="whatsapp://send?text=Produk terbaik <?php echo $post_v->namabisnis ?> kini ada di Mantenbaru. Klik <?php echo base_url("vendors/$post_v->namabisnis_seo ") ?> untuk info lebih lanjut"><i class="fa fa-whatsapp"></i>Whatsapp</a></li>
+                                              <li class="color-ig"><a href="whatsapp://send?text=Produk terbaik <?php echo $company->user_company_judul?> <?php echo $post_v->namabisnis ?> kini ada di Mantenbaru. Klik <?php echo base_url("vendors/$post_v->namabisnis_seo ") ?> untuk info lebih lanjut"><i class="fa fa-whatsapp"></i>Whatsapp</a></li>
 
                                             </div>
 					    </div>
