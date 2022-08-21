@@ -205,7 +205,7 @@
                             </div>
                           </div>
                           <div class="col-12 col-sm-4">
-                            <label class="col-12 col-xs-12 col-form-label">Kecamatan <?=substr($user_bisnis['kecamatan'],0,4) ?> </label>
+                            <label class="col-12 col-xs-12 col-form-label">Kecamatan</label>
                             <div class="col-12 col-xs-10">
                               <select name="kecamatan" id="kecamatanArea" class="form-control select2" style="width: 100%;">
                                 <?php
