@@ -31,7 +31,7 @@
     <!-- <?php $this->load->view('fronts/loader')?>-->
     <?php $this->load->view('fronts/header')?>
     <div class="inner-banner">
-  		<img class="center-image" src="<?php echo base_url()?>asset/frontend/aspanel/img/bghead.jpg" alt="">
+  	
   	</div>
 
 
