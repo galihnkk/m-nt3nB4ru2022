@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="id">
+<?php $user_bisnis= $this->Crud_m->view_where('user_bisnis', array('id_bisnis'=> $post_h->harga_id_bisnis))->row(); ?>
+<?php $kecamatan= $this->Crud_m->view_where('kecamatan', array('id'=> $user_bisnis->kecamatan))->row(); ?>
+<?php $kabupaten= $this->Crud_m->view_where('kabupaten', array('id'=> $user_bisnis->kabupaten))->row(); ?>
+<?php $company= $this->Crud_m->view_where('user_company', array('user_company_account'=> $user_bisnis->user_company_account))->row(); ?>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title><?php echo $user_bisnis->namabisnis?> | <?php echo $post_h->judul?></title>
@@ -24,10 +28,7 @@
   <?php $this->load->view('fronts/css')?>
   </head>
   <body data-color="theme-1">
-    <?php $user_bisnis= $this->Crud_m->view_where('user_bisnis', array('id_bisnis'=> $post_h->harga_id_bisnis))->row(); ?>
-    <?php $kecamatan= $this->Crud_m->view_where('kecamatan', array('id'=> $user_bisnis->kecamatan))->row(); ?>
-    <?php $kabupaten= $this->Crud_m->view_where('kabupaten', array('id'=> $user_bisnis->kabupaten))->row(); ?>
-    <?php $company= $this->Crud_m->view_where('user_company', array('user_company_account'=> $user_bisnis->user_company_account))->row(); ?>
+
     <!-- <?php $this->load->view('fronts/loader')?>-->
     <?php $this->load->view('fronts/header')?>
     <br><br><br><br>
