@@ -2,24 +2,24 @@
 <html lang="id">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Mantenbaru | Mantenbaru Wedding Organizer</title>
-    <meta name="title" content="Vendor Pernikahan Terlengkap | Mantenbaru Wedding Organizer">
-    <meta name="site_url" content="<?php echo base_url()?>">
-    <meta name="description" content="">
-    <meta name="keywords" content="mantenbaru.com, mantenbaru, perencanaan investasi, vendor pernikahan, wedding organizer, wedding planner">
+    <title><?php echo $user_bisnis->namabisnis?> | <?php echo $post_h->judul?></title>
+    <meta name="title" content="<?php echo $user_bisnis->namabisnis?> | <?php echo $post_h->judul?>">
+    <meta name="site_url" content="<?php echo base_url()?>harga-detail/<?php echo $post_h->judul_seo?>">
+    <meta name="description" content="<?php echo $post_h->meta_deskripsi?>">
+    <meta name="keywords" content="<?=$identitas->meta_keyword ?>,<?php echo $post_h->keyword?>">
     <meta NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="web_author" content="dhawyarkan.com">
+    <meta name="web_author" content="dhawyarkan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta property="og:site_name" content="Mantenbaru">
-    <meta property="og:title" content="Vendor Pernikahan Terlengkap | Mantenbaru Wedding Organizer">
-    <meta property="og:description" content="">
-    <meta property="og:url" content="<?php echo base_url()?>">
-    <meta property="og:image" content="<?php echo base_url()?>assets/frontend/aspanel/img/logo.png">
-    <meta property="og:image:url" content="<?php echo base_url()?>assets/frontend/aspanel/img/logo.png">
+    <meta property="og:title" content="<?php echo $user_bisnis->namabisnis?> | <?php echo $post_h->judul?>">
+    <meta property="og:description" content="<?php echo $post_h->meta_deskripsi?>">
+    <meta property="og:url" content="<?php echo base_url()?>harga-detail/<?php echo $post_h->judul_seo?>">
+    <meta property="og:image" content="<?php echo base_url()?>assets/frontend/harga/<?php echo $post_h->foto_h?>">
+    <meta property="og:image:url" content="<?php echo base_url()?>assets/frontend/harga/<?php echo $post_h->foto_h?>">
     <meta property="og:type" content="article">
-    <link rel="shortcut icon" href="<?php echo base_url()?>assets/frontend/aspanel/img/fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->favicon ?>"" type="image/x-icon">
 
   <?php $this->load->view('fronts/css')?>
   </head>

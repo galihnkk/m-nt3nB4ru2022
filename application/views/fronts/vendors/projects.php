@@ -31,9 +31,7 @@
     <?php $company= $this->Crud_m->view_where('user_company', array('user_company_account'=> $user_bisnis->user_company_account))->row(); ?>
     <!-- <?php $this->load->view('fronts/loader')?>-->
     <?php $this->load->view('fronts/header')?>
-    <div class="inner-banner">
-  		<img class="center-image" src="<?php echo base_url()?>asset/frontend/aspanel/img/bghead.jpg" alt="">
-  	</div>
+      <br><br><br><br>
 
 
 
