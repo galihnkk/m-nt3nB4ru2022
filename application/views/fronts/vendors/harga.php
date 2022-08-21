@@ -61,7 +61,7 @@
 											<div class="contact-line"><p><i class="fa fa-map-marker"></i><a href="#"> <?php echo $kecamatan->nama_kec?> - <?php echo $kabupaten->nama?></p></a></div>
 											<div class="contact-line"><p><strong>Media Sosial</strong></p></div>
 											<div class="contact-line">
-												<a target="_blank" href="https://api.whatsapp.com/send?phone=0<?php echo $user_bisnis->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $user_bisnis->namabisnis?>%20di%20Mantenbaru.%20Bisa%20bantu%20saya?" class="button-s-2 bg-4 m-right"><i class="fa fa-whatsapp"> WA</i></a>
+												<a target="_blank" href="https://api.whatsapp.com/send?phone=620<?php echo $user_bisnis->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $user_bisnis->namabisnis?>%20di%20Mantenbaru.%20Bisa%20bantu%20saya?" class="button-s-2 bg-4 m-right"><i class="fa fa-whatsapp"> WA</i></a>
                         <?php if(empty($user_bisnis->fb)) { ?>
                         <?php }else{ ?>
                           <a target="_blank" href="<?php echo $user_bisnis->fb?>" class="button-s-2 bg-7 m-right"><i class="fa fa-facebook"> FB</i></a>
@@ -148,7 +148,7 @@
 
                                                                         <?php }?>
 
-                                                						<a href="https://api.whatsapp.com/send?phone=+62<?php echo $user_bisnis->nomerbisnis?>&text=Halo,%20<?php echo $user_bisnis->namabisnis?>%20di%20Mantenbaru.com.%20Saya%20ingin%20memilih%20<?php echo $post_h->judul?>.%20^_^" class="c-button small bg-dr-blue-2 hv-dr-blue-2-o "><span>Pilih Yang Ini !</span></a><span> </span>
+                                                						<a href="https://api.whatsapp.com/send?phone=62<?php echo $user_bisnis->nomerbisnis?>&text=Halo,%20<?php echo $user_bisnis->namabisnis?>%20di%20Mantenbaru.com.%20Saya%20ingin%20memilih%20<?php echo $post_h->judul?>.%20^_^" class="c-button small bg-dr-blue-2 hv-dr-blue-2-o "><span>Pilih Yang Ini !</span></a><span> </span>
                                                             <a href="<?php echo base_url()?>vendors/<?php echo $user_bisnis->namabisnis_seo?>" class=" c-button small bg-grey-2 hv-dr-blue-2-o "><span>Kembali</span></a>
                                                 					</div>
 												    			 </div>
