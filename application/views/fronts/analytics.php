@@ -1,11 +1,12 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $identitas->analytics?>"></script>
+
+    <meta name="google-site-verification" content="<?php echo $identitas->seo?>" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $identitas->analytics?>"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', '<?php echo $identitas->analytics?>');
     </script>
-    <meta name="google-site-verification" content="<?php echo $identitas->seo?>" />
 
     <!-- Facebook Pixel Code -->
     <script>

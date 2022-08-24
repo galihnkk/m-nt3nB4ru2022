@@ -20,7 +20,7 @@
     <meta property="og:image:url" content="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->logo ?>">
     <meta property="og:type" content="article">
     <link rel="shortcut icon" href="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->favicon ?>" type="image/x-icon">
-
+    <?php $this->load->view('fronts/analytics')?>
     <?php $this->load->view('fronts/css')?>
   </head>
   <body data-color="theme-1">

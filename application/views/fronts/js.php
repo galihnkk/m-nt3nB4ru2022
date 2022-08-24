@@ -15,6 +15,3 @@
              js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.10&appId=129429343801925';
              fjs.parentNode.insertBefore(js, fjs);
            }(document, 'script', 'facebook-jssdk'));</script>
-
-           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111600672-1"></script>
-<?php $this->load->view('fronts/analytics')?>

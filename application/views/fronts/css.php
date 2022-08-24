@@ -6,10 +6,3 @@
 <link rel="alternate" href="<?php echo base_url()?>" hreflang="id" />
 <link href='<?php echo base_url()?>' rel='canonical'/>
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111600672-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-111600672-1');
-</script>
