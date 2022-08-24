@@ -19,9 +19,9 @@
     <meta property="og:image" content="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->logo ?>">
     <meta property="og:image:url" content="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->logo ?>">
     <meta property="og:type" content="article">
-    <link rel="shortcut icon" href="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->favicon ?>" type="image/x-icon">
-    <?php $this->load->view('fronts/analytics')?>
+    <link rel="shortcut icon" href="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->favicon ?>" type="image/x-icon">    
     <?php $this->load->view('fronts/css')?>
+    <?php $this->load->view('fronts/analytics')?>
   </head>
   <body data-color="theme-1">
     <?php $this->load->view('fronts/loader')?>
