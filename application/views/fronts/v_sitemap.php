@@ -5,24 +5,36 @@
      <loc><?php echo base_url();?></loc>
      <priority>1.0</priority>
   </url>
-  <?php foreach($klien as $data) { ?>
   <url>
-     <loc><?php echo base_url("klien/").$data->bisnis_judul_seo;?></loc>
+     <loc><?php echo base_url("vendors/");?></loc>
      <priority>0.5</priority>
   </url>
-  <?php } ?>
-  <?php foreach($templates as $data) { ?>
+<?php foreach($vendorkategori as $data) { ?>
   <url>
-     <loc><?php echo base_url("templates/").$data->templates_judul_seo;?></loc>
+     <loc><?php echo base_url("vendors/kategori/").$data->user_company_judul_seo;?></loc>
      <priority>0.5</priority>
   </url>
-  <?php } ?>
-  <?php foreach($paketharga as $data) { ?>
+<?php } ?>
+<?php foreach($vendors as $data) { ?>
   <url>
-     <loc><?php echo base_url("harga/").$data->paketharga_judul_seo;?></loc>
+     <loc><?php echo base_url("vendors/").$data->namabisnis_seo;?></loc>
      <priority>0.5</priority>
   </url>
-  <?php } ?>
+<?php } ?>
+<?php foreach($vendorsharga as $data) { ?>
+  <url>
+     <loc><?php echo base_url("harga-detail/").$data->judul_seo;?></loc>
+     <priority>0.5</priority>
+  </url>
+<?php } ?>
+<?php foreach($vendorsprojek as $data) { ?>
+  <url>
+     <loc><?php echo base_url("projek-detail/").$data->judul_seo;?></loc>
+     <priority>0.5</priority>
+  </url>
+<?php } ?>
+
+
 
 
 
