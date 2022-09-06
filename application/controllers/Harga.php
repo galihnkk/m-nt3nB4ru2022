@@ -185,14 +185,12 @@ class Harga extends CI_Controller
 	public function edit()
   {
 					$id = $this->uri->segment(3);
-
 						if (isset($_POST['submit']))
 						{
 							$config['upload_path'] = 'assets/frontend/harga/';
 							$config['allowed_types'] = 'gif|jpg|png|JPG|JPEG';
-
 							$this->upload->initialize($config);
-							$this->upload->do_upload('foto1');
+							$this->upload->do_upload('foto_h');
 							$hasil=$this->upload->data();
 							$config['image_library']='gd2';
 							$config['source_image'] = 'assets/frontend/harga/'.$hasil['file_name'];

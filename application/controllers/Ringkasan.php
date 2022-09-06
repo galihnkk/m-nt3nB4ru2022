@@ -303,7 +303,6 @@ class Ringkasan extends CI_Controller
 	public function edit()
   {
 					$id = $this->uri->segment(3);
-
 						if (isset($_POST['submit']))
 						{
 							$config['upload_path'] = 'assets/frontend/projek/';
