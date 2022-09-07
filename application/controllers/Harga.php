@@ -288,11 +288,7 @@ class Harga extends CI_Controller
 			$_id = $this->db->get_where('harga',['id_harga' => $id_projek])->row();
 			$query = $this->db->delete('harga',['id_harga'=>$id_projek]);
 			if($query){
-                unlink("assets/frontend/projek/".$_id->foto1);
-								unlink("assets/frontend/projek/".$_id->foto2);
-								unlink("assets/frontend/projek/".$_id->foto3);
-								unlink("assets/frontend/projek/".$_id->foto4);
-								unlink("assets/frontend/projek/".$_id->foto5);
+                unlink("assets/frontend/harga/".$_id->foto_h);
       }
 			redirect('harga/sampah');
 		}

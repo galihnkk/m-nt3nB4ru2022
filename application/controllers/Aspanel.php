@@ -1161,7 +1161,7 @@ class Aspanel extends CI_Controller {
 													'nama' => $this->input->post('nama'));
 												}
 											$id_pelanggan = $this->Crud_m->tambah_user($data);
-										
+
 											$data_user_detail = array(
 													'id_user' => $id_pelanggan,
 													'user_detail_jekel' => $this->input->post('user_detail_jekel'),
@@ -1427,7 +1427,7 @@ class Aspanel extends CI_Controller {
 	{
 			cek_session_akses('data_karyawan',$this->session->id_session);
 			$data = array('user_stat'=>'delete');
-			$where = array('id_user' => $this->uri->segment(3));
+			$where = array('username' => $this->uri->segment(3));
 			$this->db->update('user', $data, $where);
 			redirect('aspanel/data_karyawan');
 	}
@@ -1443,13 +1443,32 @@ class Aspanel extends CI_Controller {
 	{
 			cek_session_akses('data_karyawan',$this->session->id_session);
 			$id = $this->uri->segment(3);
-			$_id = $this->db->get_where('user',['id_user' => $id])->row();
-			$query = $this->db->delete('user',['id_user'=> $id]);
-			$_id2 = $this->db->get_where('user_detail',['id_user' => $id])->row();
-			$query2 = $this->db->delete('user_detail',['id_user'=> $id]);
+			$_id = $this->db->get_where('user',['username' => $id])->row();
+			$query = $this->db->delete('user',['username'=> $id]);
+			$_id2 = $this->db->get_where('user_detail',['user_detail_username' => $id])->row();
+			$query2 = $this->db->delete('user_detail',['user_detail_username'=> $id]);
+			$_id3 = $this->db->get_where('harga',['username' => $id])->row();
+			$query3 = $this->db->delete('harga',['username'=> $id]);
+			$_id4 = $this->db->get_where('projek',['username' => $id])->row();
+			$query4 = $this->db->delete('projek',['username'=> $id]);
+			$_id5 = $this->db->get_where('user_bisnis',['username' => $id])->row();
+			$query5 = $this->db->delete('user_bisnis',['username'=> $id]);
 			if($query){
-							 unlink("./bahan/foto_karyawan/".$_id->user_gambar);
-		 }
+						unlink("assets/frontend/gambar_bisnis/".$_id->user_gambar);
+		 			 	}
+		 	if($query3){
+						unlink("assets/frontend/harga/".$_id3->foto_h);
+						}
+			if($query4){
+						unlink("assets/frontend/projek/".$_id4->foto1);
+						unlink("assets/frontend/projek/".$_id4->foto2);
+						unlink("assets/frontend/projek/".$_id4->foto3);
+						unlink("assets/frontend/projek/".$_id4->foto4);
+						unlink("assets/frontend/projek/".$_id4->foto5);
+	 			 		}
+	 		if($query5){
+						unlink("assets/frontend/gambar_bisnis/".$_id5->gambar);
+						}
 		redirect('aspanel/data_karyawan_storage_bin');
 	}
 	/*	Bagian untuk Data Karyawan - Penutup	*/

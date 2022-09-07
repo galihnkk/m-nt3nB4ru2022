@@ -47,8 +47,8 @@
                   <td><?=$row['user_level_nama']?></td>
                   <td>
                     <?php
-                    echo"<a class='btn btn-primary btn-sm' title='Kembalikan' href='".base_url()."aspanel/data_karyawan_restore/$row[id_user]'><i class='fab fa-creative-commons-sa'></i></a>
-                    <a class='btn btn-danger btn-sm' title='Hapus Permanen' href='".base_url()."aspanel/data_karyawan_delete/$row[id_user]' onclick=\"return confirm('Yakin ingin menghapus permanen data karyawan ini?')\"><i class='fas fa-trash-alt'></i></a>";
+                    echo"<a class='btn btn-primary btn-sm' title='Kembalikan' href='".base_url()."aspanel/data_karyawan_restore/$row[username]'><i class='fab fa-creative-commons-sa'></i></a>
+                    <a class='btn btn-danger btn-sm' title='Hapus Permanen' href='".base_url()."aspanel/data_karyawan_delete/$row[username]' onclick=\"return confirm('Yakin ingin menghapus permanen data ini?')\"><i class='fas fa-trash-alt'></i></a>";
                     ?>
                   </td>
                 </tr>

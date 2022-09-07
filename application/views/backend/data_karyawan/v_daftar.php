@@ -52,8 +52,8 @@
                   <td>
                     <?php
                     echo"
-                    <a class='btn btn-primary btn-sm' title='Edit Data' href='".base_url()."aspanel/data_karyawan_update/$row[id_session]'><i class='fas fa-edit'></i></a>
-                    <a class='btn btn-danger btn-sm' title='Delete Data' href='".base_url()."aspanel/data_karyawan_delete_temp/$row[id_user]' onclick=\"return confirm('Are you sure want to delete this data?')\"><i class='fas fa-trash-alt'></i></a>";
+                    <a class='btn btn-primary btn-sm' title='Edit' href='".base_url()."aspanel/data_karyawan_update/$row[id_session]'><i class='fas fa-edit'></i></a>
+                    <a class='btn btn-danger btn-sm' title='Delete' href='".base_url()."aspanel/data_karyawan_delete_temp/$row[username]' onclick=\"return confirm('Are you sure want to delete this data?')\"><i class='fas fa-trash-alt'></i></a>";
                     ?>
                   </td>
                   <td><?=$no++?></td>
