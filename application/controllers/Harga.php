@@ -114,6 +114,7 @@ class Harga extends CI_Controller
               {
 								$data = array(
 									'username'=>$this->input->post('id'),
+                  'harga_id_bisnis'=>$this->input->post('harga_id_bisnis'),
 									'judul'=>$this->input->post('judul'),
 									'judul_seo'=>$this->mylibrary->seo_title($this->input->post('judul')),
                   'harga'=>$this->input->post('harga'),
@@ -130,6 +131,7 @@ class Harga extends CI_Controller
                        {
         									$data = array(
                             'username'=>$this->input->post('id'),
+                            'harga_id_bisnis'=>$this->input->post('harga_id_bisnis'),
           									'judul'=>$this->input->post('judul'),
           									'judul_seo'=>$this->mylibrary->seo_title($this->input->post('judul')),
                             'harga'=>$this->input->post('harga'),

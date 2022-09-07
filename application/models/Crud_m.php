@@ -587,7 +587,6 @@ class Crud_m extends CI_model{
 	 {
 		   $this->db->insert('products_order_detail', $data);
 	 }
-
    function total_rows() {
     $this->db->where('blogs_status','publish');
   return $this->db->get('blogs')->num_rows();

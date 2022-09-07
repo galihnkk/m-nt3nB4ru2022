@@ -26,6 +26,7 @@
       <div class="row">
         <div class="col-md-3">
           <?php $users= $this->Crud_m->view_where('user', array('username'=> $this->session->username))->row_array(); ?>
+          <?php $users_bisnis= $this->Crud_m->view_where('user_bisnis', array('username'=> $this->session->username))->row_array(); ?>
           <!-- Profile Image -->
           <div class="card card-primary card-outline">
             <div class="card-body box-profile">
@@ -82,6 +83,7 @@
                   <h4><b>Tambah Harga</b></h4>
                   <div class="row">
                     <input type="hidden" name="id" value="<?=$users['username'] ?>">
+                    <input type="hidden" name="id" value="<?=$users_bisnis['id_bisnis'] ?>">
                     <div class="col-12 col-sm-12">
                       <label class="col-6 col-xs-4 col-form-label">Judul</label>
                       <div class="col-12 col-xs-10">

@@ -131,9 +131,159 @@
                       </div>
                     </div>
 
+
+
                     <?php if($this->session->level=='4'){ ?>
                     <ul class="list-group list-group-unbordered mb-3">
-                      <?php $user_bisnis = $this->As_m->edit('user_bisnis', array('username' => $this->session->username))->row_array(); ?>
+
+                    <?php $user_bisnis = $this->As_m->edit('user_bisnis', array('username' => $this->session->username))->row_array(); ?>
+                    <?php if(empty($user_bisnis['username'])) { ?>
+                      <li class="list-group-item">
+                        <h4><b>Informasi Bisnis</b></h4>
+                        <div class="row">
+                          <input type="hidden" name="username" value="<?php echo $record['username']?>">
+                          <div class="col-12 col-sm-6">
+                            <label class="col-6 col-xs-4 col-form-label">Kategori</label>
+                            <div class="col-12 col-xs-10">
+                              <select name='user_company_account' id="propinsi" class="form-control select2" onchange="loadKabupaten()"  style="width: 100%;">
+                                <option value=''></option>
+                                <?php foreach ($companys as $row) {
+                                  if ($user_bisnis['user_company_account'] == $row['user_company_account']){
+                                    echo"<option selected='selected' value='$row[user_company_account]'>$row[user_company_judul]</option>";
+                                  }else{
+                                    echo"<option value='$row[user_company_account]'>$row[user_company_judul]</option>";
+                                  }
+                                } ?>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-4 col-xs-2 col-form-label">Nama Brand</label>
+                            <div class="col-12 col-xs-10">
+                              <input type="text" class="form-control"  name ="namabisnis" >
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-6 col-xs-4 col-form-label">Tentang</label>
+                            <div class="col-12 col-xs-10">
+                              <textarea class="form-control" name="tentangbisnis" rows="5" cols="80"></textarea>
+
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-12 col-xs-12 col-form-label">Alamat</label>
+                            <div class="col-12 col-xs-10">
+                              <textarea class="form-control" name="alamat" rows="5" cols="80"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-4">
+                            <label class="col-6 col-xs-4 col-form-label">Provinsi</label>
+                            <div class="col-12 col-xs-10">
+                              <select name="provinsi" id="provinsiArea" class="form-control select2" onchange="loadKabupaten()"  style="width: 100%;">
+                                <option value="">- Pilih Propinsi -</option>
+                                <?php foreach ($propinsi ->result() as $row) {
+                                  if ($user_bisnis['propinsi'] == $row->id){
+                                    echo"<option selected='selected' value='$row->id'>$row->nama</option>";
+                                  }else{
+                                    echo"<option value='$row->id'>$row->nama</option>";
+                                  }
+                             } ?>
+                           </select>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-4">
+                            <label class="col-12 col-xs-12 col-form-label">Kota/Kabupaten</label>
+                            <div class="col-12 col-xs-10">
+                              <select name="kabupaten" id="kabupatenArea" onchange="loadKecamatan()" class="form-control select2" style="width: 100%;">
+                                <?php
+                                $kabupatens = $this->Crud_m->view_ordering_like('kabupaten','id_prov',substr($user_bisnis['kabupaten'],0,2),'id','ASC');
+                                 ?>
+                                <?php foreach ($kabupatens ->result()  as $row) {
+                                  if ($user_bisnis['kabupaten'] == $row->id){
+                                        echo"<option selected='selected' value='$row->id'>$row->nama</option>";
+                                      }else{
+                                        echo "<option value='$row->id'>$row->nama</option>";
+                                      }
+                                  } ?>
+                            </select>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-4">
+                            <label class="col-12 col-xs-12 col-form-label">Kecamatan</label>
+                            <div class="col-12 col-xs-10">
+                              <select name="kecamatan" id="kecamatanArea" class="form-control select2" style="width: 100%;">
+                                <?php
+                                $kecamatans = $this->Crud_m->view_ordering_like('kecamatan','id_kabupaten',substr($user_bisnis['kecamatan'],0,4),'id','ASC');
+                                 ?>
+                                <?php foreach ($kecamatans->result() as $row) {
+                                  if ($user_bisnis['kecamatan'] == $row->id){
+                                    echo"<option selected='selected' value='$row->id'>$row->nama_kec</option>";
+                                  }else{
+                                    echo "<option value='$row->id'>$row->nama_kec</option>";
+                                  }
+                             } ?>
+                            </select>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-12 col-xs-12 col-form-label">Kode pos</label>
+                            <div class="col-12 col-xs-10">
+                              <input type="text" class="form-control"  name ="kodepos" >
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-6 col-xs-4 col-form-label">WhatsApp</label>
+                            <div class="col-12 col-xs-10">
+                              <input type="text" class="form-control"  name ="nomerbisnis">
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-12 col-xs-12 col-form-label">Instagram</label>
+                            <div class="col-12 col-xs-10">
+                              <input type="text" class="form-control"  name ="ig" >
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-12 col-xs-12 col-form-label">Youtube</label>
+                            <div class="col-12 col-xs-10">
+                              <input type="text" class="form-control"  name ="ytb" >
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-12 col-xs-12 col-form-label">Facebook</label>
+                            <div class="col-12 col-xs-10">
+                              <input type="text" class="form-control"  name ="fb" >
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-12 col-xs-12 col-form-label">Tiktok</label>
+                            <div class="col-12 col-xs-10">
+                              <input type="text" class="form-control"  name ="tiktok" >
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-12 col-xs-12 col-form-label">Logo</label>
+                            <div class="col-12 col-xs-10">
+                              <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="logo">
+                                <label class="custom-file-label" for="exampleInputFile"></label>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <label class="col-12 col-xs-12 col-form-label">Logo Preview</label>
+                            <div class="col-12 col-xs-10">
+                              <?php if(empty($user_bisnis['gambar'])) { ?>
+                                <img src="<?php echo base_url()?>assets/frontend/noimages.jpg" class="img-fluid mb-3">
+                              <?php }else { ?>
+                                <img src="<?php echo base_url()?>assets/frontend/gambar_bisnis/<?php echo $user_bisnis['gambar'];?>" class="img-fluid mb-3">
+                              <?php }?>
+                            </div>
+                          </div>
+
+                        </div>
+                      </li>
+                    <?php }else { ?>
                       <li class="list-group-item">
                         <h4><b>Informasi Bisnis</b></h4>
                         <div class="row">
@@ -279,6 +429,7 @@
 
                         </div>
                       </li>
+                    <?php } ?>
                     </ul>
                   <?php } ?>
 

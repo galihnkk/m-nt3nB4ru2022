@@ -1128,11 +1128,13 @@ class Aspanel extends CI_Controller {
 					$this->load->library('image_lib', $config);
 					$this->image_lib->resize();
 
+					$usernames = $this->input->post('username');
+
 
 												if ($hasil22['file_name']==''){
 
 												$data = array(
-													'username' => $this->input->post('username'),
+													'username' => $usernames,
 													'email' => $this->input->post('email'),
 													'password' => sha1($this->input->post('password')),
 													'user_status' => '1',
@@ -1145,7 +1147,7 @@ class Aspanel extends CI_Controller {
 													'nama' => $this->input->post('nama'));
 												}else {
 												$data = array(
-													'username' => $this->input->post('username'),
+													'username' => $usernames,
 													'email' => $this->input->post('email'),
 													'password' => sha1($this->input->post('password')),
 													'user_status' => '1',
@@ -1159,6 +1161,7 @@ class Aspanel extends CI_Controller {
 													'nama' => $this->input->post('nama'));
 												}
 											$id_pelanggan = $this->Crud_m->tambah_user($data);
+										
 											$data_user_detail = array(
 													'id_user' => $id_pelanggan,
 													'user_detail_jekel' => $this->input->post('user_detail_jekel'),
@@ -1189,6 +1192,13 @@ class Aspanel extends CI_Controller {
 													{
 																$agent = 'Unidentified User Agent';
 													}
+
+
+													$user_bisnis = array (
+														'username' => $this->input->post('username'),
+													);
+													$this->db->insert('user_bisnis', $user_bisnis);
+
 
 									$data_history_karyawan = array (
 										'log_activity_user_id'=>$this->session->id_user,
