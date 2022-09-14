@@ -68,7 +68,7 @@
                   <div class="d-block d-sm-none"><i class="nav-icon fas fa-photo-video"></i></div>
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-photo-video"></i> Ringkasan</div>
                 </a>
-                <a class="btn btn-outline-danger" href="<?php echo base_url()?>pengaturan/harga">
+                <a class="btn btn-outline-danger" href="<?php echo base_url()?>harga/informasi">
                   <div class="d-block d-sm-none"><i class="nav-icon fas fa-hand-holding-usd"></i></div>
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-hand-holding-usd"></i> Harga</div>
                 </a>
