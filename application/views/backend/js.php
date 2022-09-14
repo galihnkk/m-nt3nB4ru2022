@@ -18,7 +18,7 @@
 <script src="<?php echo base_url()?>assets/backend/tag/js/tag-it.min.js"></script>
 <script type="text/javascript">
   $(function () {
-    $('.textarea').summernote()
+    $('#textarea').summernote()
 
     $('.my-colorpicker2').colorpicker()
     $('.my-colorpicker2').on('colorpickerChange', function(event) {
