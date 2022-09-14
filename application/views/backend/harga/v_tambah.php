@@ -83,7 +83,7 @@
                   <h4><b>Tambah Harga</b></h4>
                   <div class="row">
                     <input type="hidden" name="id" value="<?=$users['username'] ?>">
-                    <input type="hidden" name="id" value="<?=$users_bisnis['id_bisnis'] ?>">
+                    <input type="hidden" name="harga_id_bisnis" value="<?=$users_bisnis['id_bisnis'] ?>">
                     <div class="col-12 col-sm-12">
                       <label class="col-6 col-xs-4 col-form-label">Judul</label>
                       <div class="col-12 col-xs-10">
