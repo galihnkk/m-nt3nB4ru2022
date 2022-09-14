@@ -142,7 +142,7 @@
                     <div class="col-12 col-sm-12">
                       <label class="col-6 col-xs-4 col-form-label">Deskripsi</label>
                       <div class="col-12 col-xs-10">
-                        <textarea class="textarea" name="deskripsi" maxlength="2000" rows="5" value="<?php echo $records['deskripsi'] ?>"><?php echo $records['deskripsi']?></textarea>
+                        <textarea name="deskripsi" maxlength="2000" rows="5" value="<?php echo $records['deskripsi'] ?>"><?php echo $records['deskripsi']?></textarea>
 
                       </div>
                     </div>

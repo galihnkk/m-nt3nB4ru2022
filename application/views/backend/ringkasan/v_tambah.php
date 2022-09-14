@@ -91,7 +91,7 @@
                     <div class="col-12 col-sm-12">
                       <label class="col-6 col-xs-4 col-form-label">Deskripsi</label>
                       <div class="col-12 col-xs-10">
-                        <textarea class="textareas"  name ="deskripsi" style="width: 100%; height: 100px;" ></textarea>
+                        <textarea  name ="deskripsi" style="width: 100%; height: 100px;" ></textarea>
                       </div>
                     </div>
                     <div class="col-12 col-sm-6">
