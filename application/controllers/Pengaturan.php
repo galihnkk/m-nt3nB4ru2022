@@ -35,7 +35,7 @@ class Pengaturan extends CI_Controller
 			$config['source_image'] = './assets/frontend/gambar_bisnis/'.$logobisnis['file_name'];
 			$config['create_thumb']= FALSE;
 			$config['maintain_ratio']= FALSE;
-			$config['max_size'] = 5000;			
+			$config['max_size'] = 5000;
 			$config['new_image']= './assets/frontend/gambar_bisnis/'.$logobisnis['file_name'];
 			$this->load->library('image_lib', $config);
 			$this->image_lib->resize();
@@ -52,6 +52,7 @@ class Pengaturan extends CI_Controller
           $data2 = array(
             'user_company_account'=>$this->db->escape_str($this->input->post('user_company_account')),
             'namabisnis'=>$this->input->post('namabisnis'),
+            'namabisnis_seo'=>$this->mylibrary->seo_title($this->input->post('namabisnis')),
             'tentangbisnis'=>$this->input->post('tentangbisnis'),
             'alamat'=>$this->input->post('alamat'),
             'propinsi'=>$this->input->post('provinsi'),
@@ -87,6 +88,7 @@ class Pengaturan extends CI_Controller
             $data2 = array(
               'user_company_account'=>$this->db->escape_str($this->input->post('user_company_account')),
               'namabisnis'=>$this->input->post('namabisnis'),
+              'namabisnis_seo'=>$this->mylibrary->seo_title($this->input->post('namabisnis')),
               'tentangbisnis'=>$this->input->post('tentangbisnis'),
               'alamat'=>$this->input->post('alamat'),
               'propinsi'=>$this->input->post('provinsi'),
@@ -117,6 +119,7 @@ class Pengaturan extends CI_Controller
               'gambar'=>$logobisnis['file_name'],
               'user_company_account'=>$this->db->escape_str($this->input->post('user_company_account')),
               'namabisnis'=>$this->input->post('namabisnis'),
+              'namabisnis_seo'=>$this->mylibrary->seo_title($this->input->post('namabisnis')),
               'tentangbisnis'=>$this->input->post('tentangbisnis'),
               'alamat'=>$this->input->post('alamat'),
               'propinsi'=>$this->input->post('provinsi'),
@@ -151,6 +154,7 @@ class Pengaturan extends CI_Controller
             $data2 = array(
               'user_company_account'=>$this->db->escape_str($this->input->post('user_company_account')),
               'namabisnis'=>$this->input->post('namabisnis'),
+              'namabisnis_seo'=>$this->mylibrary->seo_title($this->input->post('namabisnis')),
               'tentangbisnis'=>$this->input->post('tentangbisnis'),
               'alamat'=>$this->input->post('alamat'),
               'propinsi'=>$this->input->post('provinsi'),
@@ -188,6 +192,7 @@ class Pengaturan extends CI_Controller
               'gambar'=>$logobisnis['file_name'],
               'user_company_account'=>$this->db->escape_str($this->input->post('user_company_account')),
               'namabisnis'=>$this->input->post('namabisnis'),
+              'namabisnis_seo'=>$this->mylibrary->seo_title($this->input->post('namabisnis')),
               'tentangbisnis'=>$this->input->post('tentangbisnis'),
               'alamat'=>$this->input->post('alamat'),
               'propinsi'=>$this->input->post('provinsi'),
@@ -224,6 +229,7 @@ class Pengaturan extends CI_Controller
               'gambar'=>$logobisnis['file_name'],
               'user_company_account'=>$this->db->escape_str($this->input->post('user_company_account')),
               'namabisnis'=>$this->input->post('namabisnis'),
+              'namabisnis_seo'=>$this->mylibrary->seo_title($this->input->post('namabisnis')),
               'tentangbisnis'=>$this->input->post('tentangbisnis'),
               'alamat'=>$this->input->post('alamat'),
               'propinsi'=>$this->input->post('provinsi'),
@@ -262,6 +268,7 @@ class Pengaturan extends CI_Controller
             $data2 = array(
               'user_company_account'=>$this->db->escape_str($this->input->post('user_company_account')),
               'namabisnis'=>$this->input->post('namabisnis'),
+              'namabisnis_seo'=>$this->mylibrary->seo_title($this->input->post('namabisnis')),
               'tentangbisnis'=>$this->input->post('tentangbisnis'),
               'alamat'=>$this->input->post('alamat'),
               'propinsi'=>$this->input->post('provinsi'),
@@ -298,6 +305,7 @@ class Pengaturan extends CI_Controller
               'gambar'=>$logobisnis['file_name'],
               'user_company_account'=>$this->db->escape_str($this->input->post('user_company_account')),
               'namabisnis'=>$this->input->post('namabisnis'),
+              'namabisnis_seo'=>$this->mylibrary->seo_title($this->input->post('namabisnis')),
               'tentangbisnis'=>$this->input->post('tentangbisnis'),
               'alamat'=>$this->input->post('alamat'),
               'propinsi'=>$this->input->post('provinsi'),
