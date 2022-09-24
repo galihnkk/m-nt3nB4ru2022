@@ -1,5 +1,6 @@
 <!-- Navbar -->
 <?php $users= $this->Crud_m->view_where('user', array('id_user'=> $this->session->id_user))->row_array(); ?>
+<?php $users_bisnis= $this->Crud_m->view_where('user_bisnis', array('username'=> $users['username']))->row_array(); ?>
 <?php $users_level= $this->Crud_m->view_where('user_level', array('user_level_id'=>$users['level']))->row_array(); ?>
 <?php $users_detail= $this->Crud_m->view_where('user_detail', array('id_user'=> $this->session->id_user))->row_array(); ?>
 <?php $users_company= $this->Crud_m->view_where('user_company', array('user_company_id'=>$users_detail['user_detail_company']))->row_array(); ?>
@@ -13,6 +14,11 @@
     </div>
   </ul>
   <ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown">
+      <a class="nav-link" href="<?php echo base_url()?>vendors/<?php echo $users_bisnis['namabisnis_seo'];?>" target="_blank">
+        <span>Live Preview</span>
+      </a>
+    </li>
     <!-- Notifications Dropdown Menu -->
     <li class="nav-item dropdown user-menu" >
       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
