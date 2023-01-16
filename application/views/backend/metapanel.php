@@ -14,4 +14,3 @@
 <link href="<?php echo base_url()?>assets/backend/tag/css/jquery.tagit.css" rel="stylesheet">
 <link href="<?php echo base_url()?>assets/backend/tag/css/tagit.ui-zendesk.css" rel="stylesheet">
 <link href="<?php echo base_url()?>assets/backend/ionicons.min.css" rel="stylesheet">
-<link href="<?php echo base_url()?>assets/backend/summernote/summernote-bs4.css" rel="stylesheet">

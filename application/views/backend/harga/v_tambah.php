@@ -136,7 +136,7 @@
                     <div class="col-12 col-sm-12">
                       <label class="col-6 col-xs-4 col-form-label">Deskripsi</label>
                       <div class="col-12 col-xs-10">
-                        <textarea  class="textarea" name="deskripsi" placeholder="Type in your message" rows="5"></textarea>
+                        <textarea  id="default" name="deskripsi" placeholder="Type in your message" rows="5"></textarea>
 
                       </div>
                     </div>

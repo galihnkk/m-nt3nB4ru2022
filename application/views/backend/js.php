@@ -14,8 +14,21 @@
 <script src="<?php echo base_url()?>assets/backend/js/bs-custom-file-input.min.js"></script>
 <script src="<?php echo base_url()?>assets/backend/js/jquery.dataTables.js"></script>
 <script src="<?php echo base_url()?>assets/backend/js/dataTables.bootstrap4.js"></script>
-<script src="<?php echo base_url()?>assets/backend/summernote/summernote-bs4.min.js"></script>
+<script src="<?php echo base_url()?>assets/backend/tinymce/tinymce.min.js"></script>
 <script src="<?php echo base_url()?>assets/backend/tag/js/tag-it.min.js"></script>
+<script>
+      tinymce.init({
+        selector: 'textarea#default',
+        branding: false,
+        plugins: 'link lists image advlist fullscreen media code table emoticons textcolor codesample hr preview',
+    menubar: false,
+    toolbar: [
+      'undo redo | bold italic underline strikethrough bullist numlist | alignleft aligncenter alignright alignjustify | image media link',
+      ' formatselect | cut copy paste selectall | table emoticons hr | removeformat | preview code | fullscreen',
+    ],
+
+      });
+    </script>
 <script type="text/javascript">
   $(function () {
     $('#textarea').summernote()
@@ -26,11 +39,7 @@
     })
   });
 </script>
-<script type="text/javascript">
-  $(function () {
-    $('.textareas').summernote()
-  });
-</script>
+
 <script type="text/javascript">
   $(document).ready(function () {
     bsCustomFileInput.init();
