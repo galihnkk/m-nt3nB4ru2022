@@ -85,6 +85,14 @@
           </p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="<?php echo base_url(); ?>aspanel/vendor_package" class="nav-link" >
+          <i class="nav-icon fas fa-cogs"></i>
+          <p>
+            Paket Pernikahan Vendor
+          </p>
+        </a>
+      </li>
         <?php } ?>
 <!-- Baris Tutup Menu untuk Developer -->
 

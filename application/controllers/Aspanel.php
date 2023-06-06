@@ -1075,6 +1075,23 @@ class Aspanel extends CI_Controller {
 		}
 		/*	Bagian untuk klien - Penutup	*/
 
+	public function vendor_package()
+	{
+		$data['home_stat']   = '';
+		if ($this->session->level=='1'){
+				cek_session_akses('data_karyawan',$this->session->id_session);
+				$data['record_company_sub'] = $this->Crud_m->view_where_ordering('user_company',array('user_company_kategori'=>'2'),'user_company_id','ASC');
+				$data['record'] = $this->Crud_m->view_join_where3_ordering('user_bisnis','harga','user_company','id_bisnis','harga_id_bisnis','user_company_account',array('harga_status'=>'1'));
+			}elseif ($this->session->level=='2'){
+				cek_session_akses_admin('data_karyawan',$this->session->id_session);
+				$data['record_company_sub'] = $this->Crud_m->view_where_ordering('user_company',array('user_company_kategori'=>'2'),'user_company_id','ASC');
+				$data['record'] = $this->Crud_m->view_join_where3_ordering('user','user_level','user_detail','level','user_level_id','id_user',array('user_stat'=>'publish','level' =>'3'));
+			}else{
+				redirect('aspanel/home');
+			}
+			$this->load->view('backend/vendor_package/v_daftar', $data);
+	}	
+
 	/*	Bagian untuk Dat Karyawan - Pembuka	*/
 	public function data_karyawan()
 	{
