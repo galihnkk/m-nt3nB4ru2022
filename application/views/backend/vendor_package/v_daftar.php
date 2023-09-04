@@ -35,10 +35,11 @@
                   
                   <th>No</th>
                   <th>Vendor</th>
+                  <th>Views</th>
                   <th>Nama Paket</th>
                   <th>Harga Public</th>
                   <th>Harga Modal</th>
-                  <th>Perusahaan</th>
+                  <th>Kategori</th>
 
                 </tr>
                 </thead>
@@ -52,6 +53,7 @@
                 <tr>
                   <td><?=$no++?></td>
                   <td><?=$row['username']?></td>
+                  <td><?=$row['views']?></td>
                   <td><?=$row['judul']?></td>
                   <?php $a = $row['harga'] - $row['harga_diskon']?>
                   <td><?=number_format($a,0,',','.')?></td>
