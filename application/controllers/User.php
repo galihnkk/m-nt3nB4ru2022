@@ -78,13 +78,12 @@ class User extends CI_Controller
         $this->form_validation->set_rules('email','','trim|required|valid_email|is_unique[user.email]', array('trim' => '', 'required' => 'Email belum diisi','is_unique' => 'Email telah digunakan, silahkan gunakan email lain.'));
         $this->form_validation->set_rules('password','','trim|required', array('trim' => '', 'required' => 'Password belum diisi'));
         $this->form_validation->set_rules('konfirmpassword','','trim|required|matches[password]', array('trim' => '', 'required' => 'Konfirmasi Password belum diisi','matches'=>'Password tidak sama! Cek kembali password Anda'));
-        $this->form_validation->set_rules('kategori','','trim|required', array('trim' => '', 'required' => 'Kategori belum diisi'));
+       
         if($this->form_validation->run() != false){
           if (isset($_POST['submit']))
           {
             $username = $this->input->post('username');
-            $email = $this->input->post('email');
-            $level = $this->input->post('kategori');
+            $email = $this->input->post('email');            
             $password = sha1($this->input->post('password'));
             $cek = $this->Crud_m->cek_register($username,$email,'user');
               $total = $cek->num_rows();
@@ -102,7 +101,7 @@ class User extends CI_Controller
                                 'user_post_hari'=>hari_ini(date('w')),
                                 'user_post_tanggal'=>date('Y-m-d'),
                                 'user_post_jam'=>date('H:i:s'),
-                                'level'=>$this->db->escape_str($this->input->post('kategori')),
+                                'level'=>'5',
                                 'user_stat'=>'verified',
                                 'id_session'=>md5($this->input->post('email')).'-'.date('YmdHis'));
                 $id_user_detail = $this->Crud_m->tambah_user($data);

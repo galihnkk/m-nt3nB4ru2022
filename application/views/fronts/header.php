@@ -7,6 +7,7 @@
             <a href="<?php echo base_url()?>" class="logo">
                 <img height="100%" width ="213px" src="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->logo ?>" >
             </a>
+            <?php if(empty($this->session->id_session)){ ?>
             <div class="drop-wrap-wrap">
                 <div class="drop-wrap">
                   <div class="drop">
@@ -19,12 +20,24 @@
                   </div>
                 </div>
             </div>
-                <form action="#" class="form-block">
+
+            <?php } else { ?>
+            <div class="drop-wrap-wrap">
+                <div class="drop-wrap">
+                  <div class="drop">                  
+                     <a  style="color:#ff0066;" href="<?php echo base_url()?>aspanel/home"><strong>BUKAASPANEL</strong></a>
+                  </div>
+                </div>
+            </div>
+            <?php } ?>              
+                     <form action="#" class="form-block">
                   <div class="input-style-1 color-3">
                     <img src="img/search_icon_small.png" alt="">
                     <input placeholder="Search.." type="text">
                   </div>
                 </form>
+                  
+                
           </div>
         </div>
        </div>

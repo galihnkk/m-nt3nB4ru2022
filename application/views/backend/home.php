@@ -9,9 +9,15 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
+          <?php if($users['level'] == '5') {?>
+            <span class="m-0 text-dark" style="font-size:25px;"><strong>Selamat Datang</strong></span>
+            <span>Management System</span>
+          <?php }else{?>
           <div class="col-sm-6">
-            <span class="m-0 text-dark" style="font-size:25px;"><strong>Wedding Vendor </strong></span><span>Management System</span>
+            <span class="m-0 text-dark" style="font-size:25px;"><strong>Wedding Vendor </strong></span>
+            <span>Management System</span>
           </div><!-- /.col -->
+          <?php } ?>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>

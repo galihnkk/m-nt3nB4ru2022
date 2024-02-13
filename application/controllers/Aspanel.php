@@ -34,8 +34,7 @@ class Aspanel extends CI_Controller {
 			$this->load->view('backend/home', $data);
 
 		}elseif ($this->session->level=='5') {
-			cek_session_akses_level_5('home',$this->session->id_session);
-			$data['record_company_sub'] = $this->Crud_m->view_where_ordering('user_company',array('user_company_kategori'=>'2'),'user_company_id','ASC');
+			cek_session_akses_level_5('home',$this->session->id_session);		
 			$this->load->view('backend/home', $data);
 
 		}else{

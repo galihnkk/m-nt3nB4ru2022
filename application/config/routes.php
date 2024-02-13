@@ -5,7 +5,7 @@ $route['404_override'] = 'Notfound';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['login'] = "User/login";
-$route['d4ft4r'] = "User/register";
+$route['daftar'] = "User/register";
 $route['beranda'] = "aspanel/home";
 
 /* Controller Frontend - Pembuka*/

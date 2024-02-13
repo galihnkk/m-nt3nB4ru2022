@@ -57,37 +57,36 @@
 
   					<form class="f-login-form">
               <br><br><br>
-              <div class="input-style-1 b-50 type-2 color-5">
-  							<input name='username' type="text"placeholder="Username" onkeyup="this.value = this.value.toLowerCase()">
-                <span style="font-size: 15px; color:grey;"><?php echo form_error('username'); ?><br></span>
-  						</div>
-              <br><br><br>
-  						<div class="input-style-1 b-50 type-2 color-5">
-  							<input name='email' type="email" placeholder="Email" onkeyup="this.value = this.value.toLowerCase()">
-                <span style="font-size: 15px; color:grey;"><?php echo form_error('email'); ?><br></span>
-  						</div>
-              <br><br><br>
-  						<div class="input-style-1 b-50 type-2 color-5">
-  							<input name='password' type="password" placeholder="Password">
-                <span style="font-size: 15px; color:grey;"><?php echo form_error('password'); ?><br></span>
-  						</div>
-              <br><br><br>
-  						<div class="input-style-1 b-50 type-2 color-5">
-  							<input name='konfirmpassword' type="password" placeholder="Confirm Password">
-                <span style="font-size: 15px; color:grey;"><?php echo form_error('konfirmpassword'); ?><br></span>
-  						</div>
-              <br><br><br>
-              <div class="input-style-1 b-50 type-2 color-5">
-                <div class="drop-wrap drop-wrap-s-4 color-2">
-                <select class="drop" name='kategori'>
-                  <option class="drop-list" value="" selected>Mendaftar sebagai <i class="fa fa-angle-down"></i></option>
-                  <option value="5">Calon Pengantin</option>
-                  <option value="4">Owner Bisnis</option>
-                </select>
+              <div class="row" style="margin-bottom: 15px">
+                <div class="input-style-1 b-50 type-2 color-5">
+                <h5><b>Username </b> </h5>
+    							<input name='username' type="text"placeholder="Username" onkeyup="this.value = this.value.toLowerCase()">
+                  <small style="font-size: 15px; color:grey; margin-bottom: -15px"><?php echo form_error('username'); ?></small>
+    						</div>
               </div>
-                <span style="font-size: 15px; color:grey;"><?php echo form_error('kategori'); ?><br></span>
-  						</div>
-              <br><br><br>
+              <div class="row" style="margin-bottom: 15px">
+    						<div class="input-style-1 b-50 type-2 color-5">
+                <h5><b>Email </b></h5>
+    							<input name='email' type="email" placeholder="Email" onkeyup="this.value = this.value.toLowerCase()">
+                  <small style="font-size: 15px; color:grey;"><?php echo form_error('email'); ?></small>
+    						</div>
+              </div>
+              <div class="row" style="margin-bottom: 15px">
+    						<div class="input-style-1 b-50 type-2 color-5" id="show_hide_password">
+                <h5><b>Password </b><small><a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i>Tampilkan Password</a></small></h5>
+                 
+    							<input name='password' type="password" placeholder="Password">                 
+                 
+                  <small style="font-size: 15px; color:grey;"><?php echo form_error('password'); ?></small>
+    						</div>
+              </div>
+              <div class="row" style="margin-bottom: 15px">
+    						<div class="input-style-1 b-50 type-2 color-5" id="show_hide_password">
+                <h5><b>Konfirmasi Password</b></h5>
+    							<input name='konfirmpassword' type="password" placeholder="Ulangi Password">
+                  <small style="font-size: 15px; color:grey;"><?php echo form_error('konfirmpassword'); ?></small>
+    						</div>
+              </div>
   						<div class="input-style-1 b-50 type-2 color-5">
   						<span style="font-size: 12px; color:grey;">Dengan mengklik Daftar, Anda menyetujui <a href="#"><span style ="color:blue;">Syarat dan Ketentuan</span></a> Mantenbaru.</span>
   						</div>
@@ -105,5 +104,24 @@
   	<div class="full-copy">© 2022 All rights reserved. <a href="<?php echo base_url()?>">Mantenbaru</a></div>
   </div>
   <?php $this->load->view('fronts/js')?>
+
+  <script>
+    $(document).ready(function() {
+    $("#show_hide_password a").on('click', function(event) {
+        event.preventDefault();
+        if($('#show_hide_password input').attr("type") == "text"){
+            $('#show_hide_password input').attr('type', 'password');
+            $('#show_hide_password i').addClass( "fa-eye-slash" );
+            $('#show_hide_password i').removeClass( "fa-eye" );
+        }else if($('#show_hide_password input').attr("type") == "password"){
+            $('#show_hide_password input').attr('type', 'text');
+            $('#show_hide_password i').removeClass( "fa-eye-slash" );
+            $('#show_hide_password i').addClass( "fa-eye" );
+        }
+    });
+    });
+
+  </script>
+
   </body>
 </html>

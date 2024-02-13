@@ -34,6 +34,7 @@
       <div class="container">
         <br>
         <div class="row">
+       
           <div class="top-baner arrows">
         <div class="swiper-container offers-slider" data-autoplay="5000" data-loop="1" data-speed="500" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="3" data-add-slides="3">
           <div class="swiper-wrapper">

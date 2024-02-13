@@ -14,11 +14,15 @@
     </div>
   </ul>
   <ul class="navbar-nav ml-auto">
+    <?php if($users['level'] =='5') { ?>
+
+    <?php }else { ?>
     <li class="nav-item dropdown">
       <a class="nav-link" href="<?php echo base_url()?>vendors/<?php echo $users_bisnis['namabisnis_seo'];?>" target="_blank">
         <span>Live Preview</span>
       </a>
     </li>
+    <?php }?>
     <!-- Notifications Dropdown Menu -->
     <li class="nav-item dropdown user-menu" >
       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
@@ -235,6 +239,54 @@
                   </ul>
                 </li>
             <?php } ?>
+        <?php } ?>
+<!-- Baris Tutup Menu untuk Developer,Administrator,Manager -->
+
+<!-- Baris Buka Menu untuk Calon Pengantin -->
+        <?php  if($this->session->level=='5'){ ?>  
+
+            
+              <li class="nav-item ">
+                  <a href="#" class="nav-link ">
+                    <i class="nav-icon far fas fa-fw fa-th-large"></i>
+                    <p>
+                      Halaman Utama                      
+                    </p>
+                  </a>      
+              </li>
+              <li class="nav-item ">
+                  <a href="../pengaturan/informasi_pengantin" class="nav-link ">
+                    <i class="nav-icon far fas fa-fw fa-info-circle"></i>
+                    <p>
+                      Informasi Pengguna                      
+                    </p>
+                  </a>  
+              </li>
+              <li class="nav-item ">
+                  <a href="#" class="nav-link ">
+                    <i class="nav-icon far fas fa-fw fa-file-pdf"></i>
+                    <p>
+                      Dokumen Pernikahan                     
+                    </p>
+                  </a>     
+              </li>
+              <li class="nav-item ">
+                  <a href="#" class="nav-link ">
+                    <i class="nav-icon far fas fa-fw fa-envelope-open-text"></i>
+                    <p>
+                      Undangan Pernikahan                     
+                    </p>
+                  </a>     
+              </li>
+              <li class="nav-item ">
+                  <a href="#" class="nav-link ">
+                    <i class="nav-icon far fas fa-fw fa-book-open"></i>
+                    <p>
+                      Buku Tamu Digital                     
+                    </p>
+                  </a>     
+              </li>
+         
         <?php } ?>
 <!-- Baris Tutup Menu untuk Developer,Administrator,Manager -->
 
