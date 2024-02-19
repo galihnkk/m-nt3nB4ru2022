@@ -97,6 +97,14 @@
           </p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="<?php echo base_url(); ?>customer/daftar_klien" class="nav-link" >
+          <i class="nav-icon fas fa-cogs"></i>
+          <p>
+            Data Klien
+          </p>
+        </a>
+      </li>
         <?php } ?>
 <!-- Baris Tutup Menu untuk Developer -->
 
