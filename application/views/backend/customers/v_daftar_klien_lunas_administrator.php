@@ -34,20 +34,20 @@
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-exclamation-circle"></i> Daftar Klien</div>
                 </a>                
                 <a class="btn btn-outline-danger" href="<?php echo base_url()?>customer/daftar_klien_konsul">
-                  <div class="d-block d-sm-none"><i class="nav-icon fas fa-hand-holding-usd"></i></div>
-                  <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-hand-holding-usd"></i> Klien Konsul Offline</div>
+                  <div class="d-block d-sm-none"><i class="nav-icon fas fa-hands-helping"></i></div>
+                  <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-hands-helping"></i> Klien Konsul Offline</div>
                 </a>
                 <a class="btn btn-outline-danger" href="<?php echo base_url()?>customer/daftar_klien_kuncitgl">
-                  <div class="d-block d-sm-none"><i class="nav-icon fas fa-hand-holding-usd"></i></div>
-                  <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-hand-holding-usd"></i> Kunci Tanggal</div>
+                  <div class="d-block d-sm-none"><i class="nav-icon fas fa-calendar-check"></i></div>
+                  <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-calendar-check"></i> Kunci Tanggal</div>
                 </a>
                 <a class="btn btn-outline-danger" href="<?php echo base_url()?>customer/daftar_klien_uangmuka">
-                  <div class="d-block d-sm-none"><i class="nav-icon fas fa-hand-holding-usd"></i></div>
-                  <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-hand-holding-usd"></i> Uang Muka</div>
+                  <div class="d-block d-sm-none"><i class="nav-icon fas fa-handshake"></i></div>
+                  <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-handshake"></i> Uang Muka</div>
                 </a>
                 <a class="btn btn-danger" href="<?php echo base_url()?>customer/daftar_klien_lunas">
-                  <div class="d-block d-sm-none"><i class="nav-icon fas fa-hand-holding-usd"></i></div>
-                  <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-hand-holding-usd"></i> Pelunasan</div>
+                  <div class="d-block d-sm-none"><i class="nav-icon fas fa-trophy"></i></div>
+                  <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-trophy"></i> Pelunasan</div>
                 </a>
             </div><!-- /.card-header -->
             <br>
@@ -83,7 +83,7 @@
                   </td>
                   <td><?=$no++?></td>
                   <td><?=$row['customers_nama']?></td>
-                  <td><?php echo $row['customers_nohp']?></td>
+                  <td><a href="https://wa.me/<?php echo $row['customers_nohp']?>"><?php echo $row['customers_nohp']?></a></td>
                   <td><?php echo tgl_indo($row['customers_tanggal_acara'])?>, <?php echo $row['customers_lokasi']?></td>                  
                   <td><?= tgl_indo($row['tanggal'])?></td>
                 </tr>
