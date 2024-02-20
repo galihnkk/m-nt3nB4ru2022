@@ -85,7 +85,7 @@
                   <td><?=$row['customers_nama']?></td>
                   <td><a href="https://wa.me/<?php echo $row['customers_nohp']?>"><?php echo $row['customers_nohp']?></a></td>
                   <td><?php echo tgl_indo($row['customers_tanggal_acara'])?>, <?php echo $row['customers_lokasi']?></td>                  
-                  <td><?= tgl_indo($row['tanggal'])?></td>
+                  <td><?= tgl_indo($row['customers_tglawal'])?></td>
                 </tr>
               <?php } ?>
 

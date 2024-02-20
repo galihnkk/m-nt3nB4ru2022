@@ -59,6 +59,12 @@
                         <input type="date" class="form-control"  name ="tanggal" value="<?php echo $records['customers_tanggal_acara'] ?>"  required="required">
                       </div>
                     </div>
+                    <div class="col-12 col-sm-6">
+                      <label class="col-6 col-xs-4 col-form-label">Chat Pertama</label>
+                      <div class="col-12 col-xs-10">
+                        <input type="date" class="form-control"  name ="tanggal_chat" value="<?php echo $records['customers_tglawal'] ?>"  required="required">
+                      </div>
+                    </div>
 
                     <div class="col-12 col-sm-4">
                       <label class="col-12 col-xs-12 col-form-label">Status Klien</label>

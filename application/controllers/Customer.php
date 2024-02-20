@@ -253,8 +253,9 @@ class Customer extends CI_Controller
                   'customers_lokasi'=>$this->input->post('lokasi'),
                   'customers_tanggal_acara'=>$this->input->post('tanggal'),
                   'customers_status'=>'1',
+                  'customers_tglawal' =>$this->input->post('tanggal_chat'),
                   'hari'=>hari_ini(date('w')),
-                  'tanggal'=>$this->input->post('tanggal_chat'),
+                  'tanggal'=>date('Y-m-d'),
                   'jam'=>date('H:i:s'));
            
               $data_history = array (
@@ -332,6 +333,7 @@ class Customer extends CI_Controller
                 'customers_nohp'=>$this->input->post('hp'),
                 'customers_lokasi'=>$this->input->post('lokasi'),
                 'customers_tanggal_acara'=>$this->input->post('tanggal'),
+                'customers_tglawal' =>$this->input->post('tanggal_chat'),
                 'customers_status'=>$this->input->post('status'));
               $where = array('customers_id_session' => $this->input->post('id'));
               $query = $this->db->update('customers',$data,$where);           
