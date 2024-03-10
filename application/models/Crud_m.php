@@ -57,6 +57,16 @@ class Crud_m extends CI_model{
       $this->db->where('username',$data);
       return $this->db->get($table);
   }
+  public function view_where3($table,$data,$data2){
+      $this->db->where('username',$data);
+      $this->db->where('harga_status',$data2);
+      return $this->db->get($table);
+  }
+  public function view_where4($table,$data,$data2){
+      $this->db->where('username',$data);
+      $this->db->where('projek_status',$data2);
+      return $this->db->get($table);
+  }
 
   public function verifyemail($key)
   {

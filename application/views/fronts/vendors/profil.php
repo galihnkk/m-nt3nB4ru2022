@@ -30,7 +30,6 @@
 
 
   <body data-color="theme-1">
-    <?php $this->load->view('fronts/loader')?>
     <?php $this->load->view('fronts/header')?>
     <br><br><br><br>
 
@@ -108,11 +107,11 @@
 							 					<div class="tab-nav-wrapper">
 							 						<div class="nav-tab  clearfix">
                             <div class="nav-tab-item">
-							 							    <?php $jmla_harga = $this->Crud_m->view_where2('harga',$post_v->username)->num_rows(); ?>
+							 							    <?php $jmla_harga = $this->Crud_m->view_where3('harga',$post_v->username,'1')->num_rows(); ?>
 							 								Harga(<?php echo $jmla_harga; ?>)
 							 							</div>
 							 							<div class="nav-tab-item">
-							 							    <?php $jmla = $this->Crud_m->view_where2('projek',$post_v->username)->num_rows(); ?>
+							 							    <?php $jmla = $this->Crud_m->view_where4('projek',$post_v->username,'1')->num_rows(); ?>
 							 								Ringkasan (<?php echo $jmla; ?>)
 							 							</div>
 
@@ -127,7 +126,7 @@
                            <div class="tour-item-grid row">
                              <?php $no = 1; foreach ($post_harga as $post_h)
                                  {  ?>
-                                    <?php if ($post_v->username == $post_h->username)
+                                    <?php if ($post_v->username == $post_h->username && $post_h->harga_status == '1')
                                        { ?>
                                        <div class="col-mob-12 col-xs-6 col-sm-6 col-md-6 clear-xs-2">
                                          <div class="tour-item style-2">
@@ -157,7 +156,7 @@
 							 						<div class="tab-info">
 							 						  <div class="tour-item-grid row">
                               <?php $no = 1; foreach ($post_projek as $post_h) {  ?>
-											 				                <?php if ($post_v->username == $post_h->username){ ?>
+											 				                <?php if ($post_v->username == $post_h->username && $post_h->projek_status == '1'){ ?>
                 															<div class="col-mob-12 col-xs-6 col-sm-6 col-md-6 clear-xs-2">
                 											 					<div class="tour-item style-2">
                 											 						<div class="radius-top">
