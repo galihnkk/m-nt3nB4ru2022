@@ -109,7 +109,7 @@ class User extends CI_Controller
                     'id_user' => $id_user_detail);
                 if($this->Crud_m->tambah_user_detail($data_user_detail))
                 {
-                  if($this->sendemail($email, $saltid,$username))
+                  if($this->sendemail($email,$saltid,$username))
                                 {
                                     $this->session->set_flashdata('msg','<div class="alert bg-5 text-center">Segera lakukan aktivasi akun mantenbaru dari email anda. Harap merefresh pesan masuk di email Anda.</div>');
                                     redirect(base_url('daftar')
