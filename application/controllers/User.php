@@ -150,14 +150,14 @@ class User extends CI_Controller
             $config['charset'] = 'utf-8';
             $config['wordWrap'] = true;
            
-            $email->initialize($config);
+            $this->email->initialize($config);
             $url = base_url()."user/confirmation/".$saltid;
-            $email->from('aktivasi@mantenbaru.com', 'Mantenbaru');
-            $email->to($email);
-            $email->subject('Verifikasi Email - Mantenbaru');
+            $this->email->from('aktivasi@mantenbaru.com', 'Mantenbaru');
+            $this->email->to($email);
+            $this->email->subject('Verifikasi Email - Mantenbaru');
             $message = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></head><body><p><strong>Hallo, $username</strong></p><p>Hanya tinggal 1 langkah lagi untuk bisa bergabung dengan Mantenbaru.</p><p>Silahkan mengklik link di bawah ini</p>".$url."<br/><p>Salam Hangat</p><p>Mantenbaru Team</p></body></html>";
-            $email->message($message);
-            return $email->send();
+            $this->email->message($message);
+            return $this->email->send();
       }
   public function confirmation($key){
           if($this->Crud_m->verifyemail($key))
