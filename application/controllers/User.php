@@ -142,12 +142,14 @@ class User extends CI_Controller
   public function sendemail($email,$saltid,$username){
         // configure the email setting
             $config['protocol'] = 'smtp';
-            $config['smtp_host'] = 'ssl://mail.mantenbaru.com'; //smtp host name
-            $config['smtp_port'] = '2079'; //smtp port number
-            $config['smtp_user'] = 'activation@mantenbaru.com';
-            $config['smtp_pass'] = 'dh4wy3p1c'; //$from_email password
+            $config['SMTPHost'] = 'mail.mantenbaru.com'; //smtp host name
+            $config['SMTPPort'] = '465'; //smtp port number
+            $config['SMTPUser'] = 'activation@mantenbaru.com';
+            $config['SMTPPass'] = 'dh4wy3p1c'; //$from_email password
             $config['mailtype'] = 'html';
             $config['charset'] = 'utf-8';
+            $config['SMTPCrypto'] = 'ssl'; //tls atau ssl
+            $config['SMTPTimeout'] = 30;
             $config['wordWrap'] = true;
            
             $this->email->initialize($config);
