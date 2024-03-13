@@ -112,12 +112,12 @@ class User extends CI_Controller
                   if($this->sendemail($email, $saltid,$username))
                                 {
                                     $this->session->set_flashdata('msg','<div class="alert bg-5 text-center">Segera lakukan aktivasi akun mantenbaru dari email anda. Harap merefresh pesan masuk di email Anda.</div>');
-                                    redirect(base_url('daftar')
+                                    redirect(base_url('daftar','refresh')
                                     );
                             }else
                                 {
                                   $this->session->set_flashdata('msg','<div class="alert bg-5 text-center">Email Verifikasi tidak terkirim</div>');
-                                  redirect(base_url('daftar'));
+                                  redirect(base_url('daftar','refresh'));
                                 }
                 }
                 $data['title'] = 'Sukses mendaftar';
@@ -147,7 +147,7 @@ class User extends CI_Controller
             $config['smtp_user'] = 'no_reply@mantenbaru.com';
             $config['smtp_pass'] = 'dh4wy3p1c'; //$from_email password
             $config['mailtype'] = 'html';
-            $config['charset'] = 'iso-8859-1';
+            $config['charset'] = 'utf-8';
             $config['wordwrap'] = TRUE;
             $config['newline'] = "\r\n"; //use double quotes
             $this->email->initialize($config);
