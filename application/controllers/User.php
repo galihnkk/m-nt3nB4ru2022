@@ -144,7 +144,7 @@ class User extends CI_Controller
             $config['protocol'] = 'smtp';
             $config['smtp_host'] = 'ssl://mail.mantenbaru.com'; //smtp host name
             $config['smtp_port'] = '2079'; //smtp port number
-            $config['smtp_user'] = 'aktivasi@mantenbaru.com';
+            $config['smtp_user'] = 'activation@mantenbaru.com';
             $config['smtp_pass'] = 'dh4wy3p1c'; //$from_email password
             $config['mailtype'] = 'html';
             $config['charset'] = 'utf-8';
