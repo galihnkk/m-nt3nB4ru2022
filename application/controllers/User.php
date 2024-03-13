@@ -112,12 +112,12 @@ class User extends CI_Controller
                   if($this->sendemail($email, $saltid,$username))
                                 {
                                     $this->session->set_flashdata('msg','<div class="alert bg-5 text-center">Segera lakukan aktivasi akun mantenbaru dari email anda. Harap merefresh pesan masuk di email Anda.</div>');
-                                    redirect(base_url('daftar','refresh')
+                                    redirect(base_url('daftar')
                                     );
                             }else
                                 {
                                   $this->session->set_flashdata('msg','<div class="alert bg-5 text-center">Email Verifikasi tidak terkirim</div>');
-                                  redirect(base_url('daftar','refresh'));
+                                  redirect(base_url('daftar'));
                                 }
                 }
                 $data['title'] = 'Sukses mendaftar';
