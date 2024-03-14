@@ -160,7 +160,14 @@ class User extends CI_Controller
             $this->email->subject('Verifikasi Email - Mantenbaru');
             $message = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></head><body><p><strong>Hallo, $username</strong></p><p>Hanya tinggal 1 langkah lagi untuk bisa bergabung dengan Mantenbaru.</p><p>Silahkan mengklik link di bawah ini</p>".$url."<br/><p>Salam Hangat</p><p>Mantenbaru Team</p></body></html>";
             $this->email->message($message);
-            return $this->email->send();
+            if($this->email->send())
+            {
+              $this->session->set_flashdata('message','Check in Your Email for Email Verification mail');
+              redirect(base_url('daftar');
+
+            }
+
+
       }
   public function confirmation($key){
           if($this->Crud_m->verifyemail($key))
