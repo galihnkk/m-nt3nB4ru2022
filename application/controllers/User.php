@@ -165,6 +165,9 @@ class User extends CI_Controller
               $this->session->set_flashdata('message','Check in Your Email for Email Verification mail');
               redirect(base_url('daftar');
 
+            }else{
+              $this->session->set_flashdata('message','Gagal Kirim Email');
+              redirect(base_url('daftar');
             }
 
 
