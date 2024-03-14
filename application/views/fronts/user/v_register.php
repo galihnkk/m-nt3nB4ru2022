@@ -55,7 +55,14 @@
                 }
             ?>
 
-            
+            <?php if($this->session->flashdata('message'))
+                  {
+                    echo'
+                    <div class="alert alert-success"><center>'.$this->session->flashdata("message").'</center></div>
+
+                    ';
+
+                    } ?>
 
   					<form class="f-login-form">
               <br><br><br>
