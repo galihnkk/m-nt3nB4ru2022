@@ -141,20 +141,21 @@ class User extends CI_Controller
       }
   public function sendemail($email,$saltid,$username){
         // configure the email setting
-            $config['protocol'] = 'smtp';
-            $config['SMTPHost'] = 'mail.mantenbaru.com'; //smtp host name
-            $config['SMTPPort'] = '465'; //smtp port number
-            $config['SMTPUser'] = 'activation@mantenbaru.com';
-            $config['SMTPPass'] = 'dh4wy3p1c'; //$from_email password
-            $config['mailtype'] = 'html';
-            $config['charset'] = 'utf-8';
-            $config['SMTPCrypto'] = 'ssl'; //tls atau ssl
-            $config['SMTPTimeout'] = 30;
-            $config['wordWrap'] = true;
-           
-            $this->email->initialize($config);
+
+            $config = array (
+              'protocol'    => 'smtp',
+              'smtp_host'   => 'mail.mantenbaru.com',
+              'smtp_port'   => '465',
+              'smtp_user'   => 'activation@mantenbaru.com',
+              'smtp_pass'   => 'dh4wy3p1c',
+              'mailtype'    => 'html',
+              'charset'     => 'iso-8859-1',
+              'wordwrap'    => TRUE
+              );           
+            $this->load->library('email', $config);
+            $this->email->set_newline("\r\n");
             $url = base_url()."user/confirmation/".$saltid;
-            $this->email->from('aktivasi@mantenbaru.com', 'Mantenbaru');
+            $this->email->from('activation@mantenbaru.com', 'Mantenbaru');
             $this->email->to($email);
             $this->email->subject('Verifikasi Email - Mantenbaru');
             $message = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></head><body><p><strong>Hallo, $username</strong></p><p>Hanya tinggal 1 langkah lagi untuk bisa bergabung dengan Mantenbaru.</p><p>Silahkan mengklik link di bawah ini</p>".$url."<br/><p>Salam Hangat</p><p>Mantenbaru Team</p></body></html>";
