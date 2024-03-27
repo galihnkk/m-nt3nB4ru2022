@@ -180,6 +180,47 @@ class Customer extends CI_Controller
           redirect(base_url());
         }
   }
+  public function daftar_klien_hot()
+  {
+       if ($this->session->level=='1')
+        {
+          cek_session_akses('customers',$this->session->id_session);
+          $data['record'] = $this->Crud_m->view_where_ordering('customers',array('customers_status'=>'11'),'customers_id','DESC');
+          $this->load->view('backend/customers/v_daftar_klien_hot_administrator',$data);
+        }
+        elseif($this->session->level=='2')
+        {
+          cek_session_akses_admin('customers',$this->session->id_session);
+          $data['record'] = $this->Crud_m->view_where_ordering('user_bisnis',array('user_bisnis_status'=>'1'),'id_bisnis','DESC');
+         
+          $this->load->view('backend/customers/v_daftar_administrator',$data);
+        }
+        elseif($this->session->level=='3')
+        {
+          cek_session_akses_level_3('customers',$this->session->id_session);
+          $data['records'] = $this->Crud_m->view_where_ordering('harga',array('username'=>$this->session->username, 'harga_status'=>'1'),'id_harga','DESC');
+          $data['companys'] = $this->db->get('user_company');
+          $this->load->view('backend/customers/v_daftar',$data);
+        }
+        elseif($this->session->level=='4')
+        {
+
+          cek_session_akses_level_4('customers',$this->session->id_session);
+          $data['records'] = $this->Crud_m->view_where_ordering('harga',array('username'=>$this->session->username, 'harga_status'=>'1'),'id_harga','DESC');
+          $data['companys'] = $this->db->get('user_company');
+          $this->load->view('backend/customers/v_daftar',$data);
+        }
+        elseif($this->session->level=='5')
+        {
+          cek_session_akses_level_5('customers',$this->session->id_session);
+          $data['records'] = $this->Crud_m->view_where_ordering('harga',array('username'=>$this->session->username,'harga_status'=>'1'),'id_harga','DESC');
+          $data['companys'] = $this->db->get('user_company');
+          $this->load->view('backend/customers/v_daftar',$data);
+        }
+        else {
+          redirect(base_url());
+        }
+  }
   public function daftar_klien()
   {
        if ($this->session->level=='1')
@@ -409,14 +450,14 @@ class Customer extends CI_Controller
         }
     if ($this->session->level=='1'){
       cek_session_akses('customer/daftar_klien',$this->session->id_session);
-      $data = array('customers_status'=>'0');
+      $data = array('customers_status'=>'100');
       $where = array('customers_id_session' => $this->uri->segment(3));
       $this->db->update('customers', $data, $where);
       $data_history_addcompany = array (
         'log_activity_user_id'=>$this->session->id_session,
-        'log_activity_modul' => 'customer/daftar_klien',
+        'log_activity_modul' => 'customer/hapus_temp_klien',
         'log_activity_document_no ' => $this->uri->segment(3),
-        'log_activity_status' => 'Ghosting/Cancel Klien',
+        'log_activity_status' => 'Sampah Sementara Klien',
         'log_activity_platform'=> $agent,
         'log_activity_ip'=> $this->input->ip_address()
       );
@@ -483,13 +524,52 @@ class Customer extends CI_Controller
 
       redirect('customer/daftar_klien');
   }
-  public function sampah_klien()
+  public function batal_klien()
   {
        if ($this->session->level=='1')
         {
           cek_session_akses('customer/sampah_klien',$this->session->id_session);
-          $data['record'] = $this->Crud_m->view_where_ordering('customers',array('customers_status'=>'0'),'customers_id','DESC');
-          $this->load->view('backend/customers/v_daftar_sampah_klien_administrator',$data);
+          $data['record'] = $this->Crud_m->view_where_ordering('customers',array('customers_status'=>'110'),'customers_id','DESC');
+          $this->load->view('backend/customers/v_daftar_klien_batal_administrator',$data);
+        }
+        elseif($this->session->level=='105221cd0abe4603ecfee5fb02ba2f398128d131')
+        {
+          cek_session_akses_admin('sampah_bisnis',$this->session->id_session);
+          $data['record'] = $this->Crud_m->view_where_ordering('user_bisnis',array('user_bisnis_status'=>'0'),'id_bisnis','DESC');          
+          $this->load->view('backend/customers/v_daftar_sampah_administrator',$data);
+        }
+        elseif($this->session->level=='4f599b712d55f86b9dfd3d04338f758aa07b0a3f')
+        {
+          cek_session_akses_level_3('sampah_bisnis',$this->session->id_session);
+          $data['companys'] = $this->db->get('user_company');
+          $this->load->view('backend/customers/v_daftar_sampah',$data);
+        }
+        elseif($this->session->level=='493a39fdab06bf01adcc85102f7c8a0ad29da98d')
+        {
+          cek_session_akses_level_4('sampah_bisnis',$this->session->id_session);
+          $data['records'] = $this->Crud_m->view_where_ordering('harga',array('username'=>$this->session->username, 'harga_status'=>'0'),'id_harga','DESC');
+          $data['companys'] = $this->db->get('user_company');
+          $this->load->view('backend/customers/v_daftar_sampah',$data);
+        }
+        elseif($this->session->level=='d1f9f5dfff1d24e26ef15bab38b8afffb9fd81fa')
+        {
+          cek_session_akses_level_5('sampah_bisnis',$this->session->id_session);
+          $data['records'] = $this->Crud_m->view_where_ordering('harga',array('username'=>$this->session->username,'harga_status'=>'0'),'id_harga','DESC');
+          $data['companys'] = $this->db->get('user_company');
+          $this->load->view('backend/customers/v_daftar_sampah',$data);
+        }
+        else {
+          redirect('aspanel/logout');
+        }
+  }
+ 
+  public function cold_klien()
+  {
+       if ($this->session->level=='1')
+        {
+          cek_session_akses('customer/sampah_klien',$this->session->id_session);
+          $data['record'] = $this->Crud_m->view_where_ordering('customers',array('customers_status'=>'10'),'customers_id','DESC');
+          $this->load->view('backend/customers/v_daftar_klien_cold_administrator',$data);
         }
         elseif($this->session->level=='105221cd0abe4603ecfee5fb02ba2f398128d131')
         {
@@ -613,7 +693,7 @@ class Customer extends CI_Controller
 
       }
 
-      redirect('customer/sampah_klien');
+      redirect('customer/daftar_klien');
   }
   public function hapus_permanen_klien()
   {

@@ -72,41 +72,78 @@
                           <select class="form-control" name="status">
                             <?php if(empty($records['customers_status'])) { ?>
                               <option class="drop-list" value="" selected>Pilih<i class="fa fa-angle-down"></i></option>
-                              <option class="drop-list" value="1">Penawaran</option>
+                              <option class="drop-list" value="11">Hot</option>
+                              <option class="drop-list" value="10">Cold</option>
                               <option class="drop-list" value="2">Konsul Offline</option>
+                              <option class="drop-list" value="110">Batal</option>
                               <option class="drop-list" value="3">Kunci Tanggal</option>
                               <option class="drop-list" value="4">Uang Muka</option>
                               <option class="drop-list" value="5">Pelunasan</option>
-                            <?php }elseif($records['customers_status'] == '1') { ?>
-                              <option class="drop-list" value="1" selected>Penawaran</option>
+                            <?php }elseif($records['customers_status'] == '11') { ?>
+                              <option class="drop-list" value="11" selected>Hot</option>
+                              <option class="drop-list" value="10">Cold</option>
                               <option class="drop-list" value="2">Konsul Offline</option>
+                              <option class="drop-list" value="110">Batal</option>
                               <option class="drop-list" value="3">Kunci Tanggal</option>
                               <option class="drop-list" value="4">Uang Muka</option>
                               <option class="drop-list" value="5">Pelunasan</option>
                             <?php }elseif($records['customers_status'] == '2') { ?>
-                              <option class="drop-list" value="1" >Penawaran</option>
+                              <option class="drop-list" value="11" >Hot</option>
+                              <option class="drop-list" value="10">Cold</option>
                               <option class="drop-list" value="2" selected>Konsul Offline</option>
+                              <option class="drop-list" value="110">Batal</option>
                               <option class="drop-list" value="3">Kunci Tanggal</option>
                               <option class="drop-list" value="4">Uang Muka</option>
                               <option class="drop-list" value="5">Pelunasan</option>
                             <?php }elseif($records['customers_status'] == '3') { ?>
-                              <option class="drop-list" value="1" >Penawaran</option>
+                              <option class="drop-list" value="11" >Hot</option>
+                              <option class="drop-list" value="10">Cold</option>
                               <option class="drop-list" value="2" >Konsul Offline</option>
+                              <option class="drop-list" value="110">Batal</option>
                               <option class="drop-list" value="3" selected>Kunci Tanggal</option>
                               <option class="drop-list" value="4">Uang Muka</option>
                               <option class="drop-list" value="5">Pelunasan</option>
                             <?php }elseif($records['customers_status'] == '4') { ?>
-                              <option class="drop-list" value="1" >Penawaran</option>
+                              <option class="drop-list" value="11" >Hot</option>
+                              <option class="drop-list" value="10">Cold</option>
                               <option class="drop-list" value="2" >Konsul Offline</option>
+                              <option class="drop-list" value="110">Batal</option>
                               <option class="drop-list" value="3">Kunci Tanggal</option>
                               <option class="drop-list" value="4" selected>Uang Muka</option>
                               <option class="drop-list" value="5">Pelunasan</option>
-                            <?php }else { ?>
-                              <option class="drop-list" value="1" >Penawaran</option>
+                            <?php }elseif($records['customers_status'] == '10') { ?>
+                              <option class="drop-list" value="11" >Hot</option>
+                              <option class="drop-list" value="10" selected>Cold</option>
                               <option class="drop-list" value="2" >Konsul Offline</option>
+                              <option class="drop-list" value="110">Batal</option>
+                              <option class="drop-list" value="3">Kunci Tanggal</option>
+                              <option class="drop-list" value="4" >Uang Muka</option>
+                              <option class="drop-list" value="5">Pelunasan</option>
+                            <?php }elseif($records['customers_status'] == '5') { ?>
+                              <option class="drop-list" value="11" >Hot</option>
+                              <option class="drop-list" value="10" >Cold</option>
+                              <option class="drop-list" value="2" >Konsul Offline</option>
+                              <option class="drop-list" value="110">Batal</option>
                               <option class="drop-list" value="3">Kunci Tanggal</option>
                               <option class="drop-list" value="4" >Uang Muka</option>
                               <option class="drop-list" value="5" selected>Pelunasan</option>
+                            <?php }elseif($records['customers_status'] == '110') { ?>
+                              <option class="drop-list" value="11" >Hot</option>
+                              <option class="drop-list" value="10" >Cold</option>
+                              <option class="drop-list" value="2" >Konsul Offline</option>
+                              <option class="drop-list" value="110" selected>Batal</option>
+                              <option class="drop-list" value="3">Kunci Tanggal</option>
+                              <option class="drop-list" value="4" >Uang Muka</option>
+                              <option class="drop-list" value="5" >Pelunasan</option>
+                            <?php }else { ?>
+                            <option class="drop-list" value="" selected>Pilih<i class="fa fa-angle-down"></i></option>                                
+                              <option class="drop-list" value="11" >Hot</option>
+                              <option class="drop-list" value="10">Cold</option>
+                              <option class="drop-list" value="2" >Konsul Offline</option>
+                              <option class="drop-list" value="110">Batal</option>
+                              <option class="drop-list" value="3">Kunci Tanggal</option>
+                              <option class="drop-list" value="4" >Uang Muka</option>
+                              <option class="drop-list" value="5">Pelunasan</option>
                             <?php }?>
                           </select>
                       </div>

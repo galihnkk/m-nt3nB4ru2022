@@ -13,7 +13,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="<?php echo base_url() ?>customer/daftar_klien"><small>Daftar Klien</small></a></li>
-            <li class="breadcrumb-item active"><small>Konsul Offline</small></li>
+            <li class="breadcrumb-item active"><small>Klien Hot</small></li>
           </ol>
         </div>
       </div>
@@ -33,11 +33,11 @@
                   <div class="d-block d-sm-none"><i class="nav-icon fas fa-exclamation-circle"></i></div>
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-exclamation-circle"></i> Daftar Klien</div>
                 </a>
-                <a class="btn btn-outline-danger" href="<?php echo base_url()?>customer/daftar_klien_hot">
+                <a class="btn btn-danger" href="<?php echo base_url()?>customer/daftar_klien_hot">
                   <div class="d-block d-sm-none"><i class="nav-icon fab fa-hotjar"></i></div>
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fab fa-hotjar"></i> Klien Hot</div>
-                </a>                 
-                <a class="btn btn-danger" href="<?php echo base_url()?>customer/daftar_klien_konsul">
+                </a>                
+                <a class="btn btn-outline-danger" href="<?php echo base_url()?>customer/daftar_klien_konsul">
                   <div class="d-block d-sm-none"><i class="nav-icon fas fa-hands-helping"></i></div>
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-hands-helping"></i> Klien Konsul Offline</div>
                 </a>
@@ -54,12 +54,12 @@
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-trophy"></i> Pelunasan</div>
                 </a>
                 <br><br>
-                <center><h3>Klien Konsul Offline</h3></center>
+                <center><h3>Klien Hot</h3></center>
             </div><!-- /.card-header -->
             <br>
 
             <div class="card-body table-responsive">              
-              <table id="example1" class="table table-responsive-xl col-12 table-bordered table-striped p-0">
+              <table id="log_history" class="table table-responsive-xl col-12 table-bordered table-striped p-0">
                 <thead>
                 <tr>
                   <th>Aksi</th>

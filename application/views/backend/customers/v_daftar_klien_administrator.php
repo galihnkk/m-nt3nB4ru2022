@@ -32,6 +32,10 @@
                 <a class="btn btn-danger" href="<?php echo base_url()?>customer/daftar_klien">
                   <div class="d-block d-sm-none"><i class="nav-icon fas fa-exclamation-circle"></i></div>
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-exclamation-circle"></i> Daftar Klien</div>
+                </a>
+                <a class="btn btn-outline-danger" href="<?php echo base_url()?>customer/daftar_klien_hot">
+                  <div class="d-block d-sm-none"><i class="nav-icon fab fa-hotjar"></i></div>
+                  <div class="d-md-block d-none d-sm-block"><i class="nav-icon fab fa-hotjar"></i> Klien Hot</div>
                 </a>                
                 <a class="btn btn-outline-danger" href="<?php echo base_url()?>customer/daftar_klien_konsul">
                   <div class="d-block d-sm-none"><i class="nav-icon fas fa-hands-helping"></i></div>
@@ -54,15 +58,19 @@
                       <div class="d-block d-sm-none"><i class="nav-icon fas fa-plus-circle"></i></div>
                       <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-plus-circle"></i> Tambah</div>
                 </a>
-                <a class="btn btn btn-outline-info" href="<?php echo base_url()?>customer/sampah_klien">
-                      <div class="d-block d-sm-none"><i class="nav-icon fas fa-trash"></i></div>
-                      <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-trash"></i> Ghosting/Batal</div>
+                <a class="btn btn btn-outline-info" href="<?php echo base_url()?>customer/batal_klien">
+                      <div class="d-block d-sm-none"><i class="nav-icon fas fa-user-slash"></i></div>
+                      <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-user-slash"></i> Batal</div>
+                </a>
+                <a class="btn btn btn-outline-info" href="<?php echo base_url()?>customer/cold_klien">
+                      <div class="d-block d-sm-none"><i class="nav-icon fas fa-user-clock"></i></div>
+                      <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-user-clock"></i> Cold</div>
                 </a>
             </div><!-- /.card-header -->
             <br>
 
             <div class="card-body table-responsive">              
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example1" class="table table-responsive-xl col-12 table-bordered table-striped p-0">
                 <thead>
                 <tr>
                   <th>Aksi</th>
@@ -86,7 +94,7 @@
                     <?php
                     echo"                   
                     <a class='btn btn-primary btn-sm' title='Perbarui' href='".base_url()."customer/edit_klien/$row[customers_id_session]'><i class='fas fa-edit'></i></a>
-                    <a class='btn btn-danger btn-sm' title='Hapus' href='".base_url()."customer/hapus_temp_klien/$row[customers_id_session]' onclick=\"return confirm('Yakin klien ini ghosting/cancel  ?')\"><i class='fas fa-trash-alt'></i></a>";
+                    ";
                     ?>
                   </td>
                   <td><?=$no++?></td>

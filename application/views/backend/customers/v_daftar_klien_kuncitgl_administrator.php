@@ -12,8 +12,8 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="<?php echo base_url() ?>beranda"><small>Beranda</small></a></li>
-            <li class="breadcrumb-item active"><small>Daftar Klien</small></li>
+            <li class="breadcrumb-item"><a href="<?php echo base_url() ?>customer/daftar_klien"><small>Daftar Klien</small></a></li>
+            <li class="breadcrumb-item active"><small>Kunci Tanggal</small></li>
           </ol>
         </div>
       </div>
@@ -32,7 +32,11 @@
                 <a class="btn btn-outline-danger" href="<?php echo base_url()?>customer/daftar_klien">
                   <div class="d-block d-sm-none"><i class="nav-icon fas fa-exclamation-circle"></i></div>
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-exclamation-circle"></i> Daftar Klien</div>
-                </a>                
+                </a>
+                <a class="btn btn-outline-danger" href="<?php echo base_url()?>customer/daftar_klien_hot">
+                  <div class="d-block d-sm-none"><i class="nav-icon fab fa-hotjar"></i></div>
+                  <div class="d-md-block d-none d-sm-block"><i class="nav-icon fab fa-hotjar"></i> Klien Hot</div>
+                </a>                  
                 <a class="btn btn-outline-danger" href="<?php echo base_url()?>customer/daftar_klien_konsul">
                   <div class="d-block d-sm-none"><i class="nav-icon fas fa-hands-helping"></i></div>
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-hands-helping"></i> Klien Konsul Offline</div>
@@ -49,11 +53,13 @@
                   <div class="d-block d-sm-none"><i class="nav-icon fas fa-trophy"></i></div>
                   <div class="d-md-block d-none d-sm-block"><i class="nav-icon fas fa-trophy"></i> Pelunasan</div>
                 </a>
+                <br><br>
+                <center><h3>Klien Kunci Tanggal</h3></center>
             </div><!-- /.card-header -->
             <br>
 
             <div class="card-body table-responsive">              
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example1" class="table table-responsive-xl col-12 table-bordered table-striped p-0">
                 <thead>
                 <tr>
                   <th>Aksi</th>
@@ -76,9 +82,9 @@
                   <td>
                     <?php
                     echo"
-                    <a class='btn btn-primary btn-sm' title='Detail' href='".base_url()."bookdate/date_bisnis/$row[customers_id_session]'><i class='fas fa-eye'></i></a>
+                    <a class='btn btn-primary btn-sm' title='Detail' href='#'><i class='fas fa-eye'></i></a>
                     <a class='btn btn-primary btn-sm' title='Perbarui' href='".base_url()."customer/edit_klien/$row[customers_id_session]'><i class='fas fa-edit'></i></a>
-                    <a class='btn btn-danger btn-sm' title='Hapus' href='".base_url()."customer/hapus_temp_klien/$row[customers_id_session]' onclick=\"return confirm('Yakin ingin menghapus  ?')\"><i class='fas fa-trash-alt'></i></a>";
+                    ";
                     ?>
                   </td>
                   <td><?=$no++?></td>

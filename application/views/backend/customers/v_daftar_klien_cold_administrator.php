@@ -12,8 +12,8 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="<?php echo base_url() ?>customer/daftar_klien"><small>Customer</small></a></li>
-            <li class="breadcrumb-item active"><small>Klien Batal</small></li>
+            <li class="breadcrumb-item"><a href="<?php echo base_url() ?>customer/daftar_klien"><small>Daftar Klien</small></a></li>
+            <li class="breadcrumb-item active"><small>Klien Cold</small></li>
           </ol>
         </div>
       </div>
@@ -34,12 +34,12 @@
                       <div class="d-md-block d-none d-sm-block"><i class="fab fa-creative-commons-sa"></i> Kembali</div>
                 </a>
                 <br>
-                <center><h3>Customer Batal</h3></center>
+                <center><h3>Klien Cold</h3></center>
             </div><!-- /.card-header -->
             <br>
 
             <div class="card-body table-responsive">              
-              <table id="example1" class="table table-responsive-xl col-12 table-bordered table-striped p-0">
+              <table id="log_history" class="table table-responsive-xl col-12 table-bordered table-striped p-0">
                 <thead>
                 <tr>
                   <th>Aksi</th>
@@ -48,6 +48,7 @@
                   <th>Nomer HP</th>
                   <th>Tanggal & Lokasi Acara</th>                  
                   <th>Chat Pertama</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -60,14 +61,15 @@
                 <tr>
                   <td>
                     <?php
-                    echo"                   
-                    <a class='btn btn-primary btn-sm' title='Kembalikan' href='".base_url()."customer/kembalikan_klien/$row[customers_id_session]'><i class='fab fa-creative-commons-sa'></i></a>
-                    <a class='btn btn-danger btn-sm' title='Hapus Permanen' href='".base_url()."customer/hapus_permanen_klien/$row[customers_id_session]' onclick=\"return confirm('Yakin kamu mau menghapus secara permanen?')\"><i class='fas fa-trash-alt'></i></a>";
+                    echo"
+                    <a class='btn btn-primary btn-sm' title='Detail' href='#'><i class='fas fa-eye'></i></a>
+                    <a class='btn btn-primary btn-sm' title='Perbarui' href='".base_url()."customer/edit_klien/$row[customers_id_session]'><i class='fas fa-edit'></i></a>
+                   ";
                     ?>
                   </td>
-                   <td><?=$no++?></td>
+                  <td><?=$no++?></td>
                   <td><?=$row['customers_nama']?></td>
-                  <td><?php echo $row['customers_nohp']?></td>
+                  <td><a href="https://wa.me/<?php echo $row['customers_nohp']?>"><?php echo $row['customers_nohp']?></a></td>
                   <td><?php echo tgl_indo($row['customers_tanggal_acara'])?>, <?php echo $row['customers_lokasi']?></td>                  
                   <td><?= tgl_indo($row['customers_tglawal'])?></td>
                 </tr>
