@@ -71,7 +71,7 @@
                       <div class="col-md-12 col-sm-12">
                           <select class="form-control" name="status">
                             <?php if(empty($records['customers_status'])) { ?>
-                              <option class="drop-list" value="" selected>Pilih<i class="fa fa-angle-down"></i></option>
+                              <option class="drop-list" value="1" selected>Pilih<i class="fa fa-angle-down"></i></option>
                               <option class="drop-list" value="11">Hot</option>
                               <option class="drop-list" value="10">Cold</option>
                               <option class="drop-list" value="2">Konsul Offline</option>
@@ -136,7 +136,7 @@
                               <option class="drop-list" value="4" >Uang Muka</option>
                               <option class="drop-list" value="5" >Pelunasan</option>
                             <?php }else { ?>
-                            <option class="drop-list" value="" selected>Pilih<i class="fa fa-angle-down"></i></option>                                
+                            <option class="drop-list" value="1" selected>Pilih<i class="fa fa-angle-down"></i></option>                                
                               <option class="drop-list" value="11" >Hot</option>
                               <option class="drop-list" value="10">Cold</option>
                               <option class="drop-list" value="2" >Konsul Offline</option>
