@@ -221,6 +221,132 @@ class Customer extends CI_Controller
           redirect(base_url());
         }
   }
+
+  public function klien_kuncitgl()
+  {
+          $id = $this->uri->segment(3);
+            if ($this->session->level=='1')
+                {
+                  cek_session_akses('customer/kliens',$this->session->id_session);
+                  $proses = $this->Crud_m->view_where('customers', array('customers_id_session' => $id))->row_array();
+                  $data = array('records' => $proses);
+                  $this->load->view('backend/customers/v_klien_kuncitgl',$data);
+                }
+            elseif($this->session->level=='2')
+                {
+                  cek_session_akses_admin('harga/informasi_bisnis',$this->session->id_session);
+                  $proses = $this->Crud_m->edit('user_bisnis', array('user_bisnis_session' => $id))->row_array();
+                  $data = array('records' => $proses);
+                  $data['companys'] = $this->Crud_m->view_limit_ordering('user_company','user_company_id','ASC','20','1');
+                  $data['propinsi'] = $this->db->get('provinsi');
+                  $this->load->view('backend/customers/v_edit_klien_administrator',$data);
+                }
+            elseif($this->session->level=='3')
+                {
+                  cek_session_akses_level_3('harga/informasi_bisnis',$this->session->id_session);
+                  $proses = $this->Crud_m->edit('user_bisnis', array('user_bisnis_session' => $id))->row_array();
+                  $data = array('records' => $proses);
+                  $this->load->view('backend/customers/v_edit',$data);
+                }
+            elseif($this->session->level=='4')
+                {
+                  cek_session_akses_level_4('harga/informasi_bisnis',$this->session->id_session);
+                  $proses = $this->Crud_m->edit('user_bisnis', array('user_bisnis_session' => $id))->row_array();
+                  $data = array('records' => $proses);
+                  $this->load->view('backend/customers/v_edit',$data);
+                }
+            elseif($this->session->level=='5')
+                {
+                  cek_session_akses_level_5('harga/informasi_bisnis',$this->session->id_session);
+                  $proses = $this->Crud_m->edit('user_bisnis', array('user_bisnis_session' => $id))->row_array();
+                  $data = array('records' => $proses);
+                  $this->load->view('backend/customers/v_edit',$data);
+                }
+  }
+
+  public function klien_kuncitgl_tambah()
+  {
+          $id = $this->uri->segment(3);
+            if (isset($_POST['submit']))
+            {            
+            if ($this->agent->is_browser())
+                {
+                      $agent = 'Desktop ' .$this->agent->browser().' '.$this->agent->version();
+                }
+                elseif ($this->agent->is_robot())
+                {
+                      $agent = $this->agent->robot();
+                }
+                elseif ($this->agent->is_mobile())
+                {
+                      $agent = 'Mobile' .$this->agent->mobile().''.$this->agent->version();
+                }
+                else
+                {
+                      $agent = 'Unidentified User Agent';
+                }  
+              $data = array(
+                'customers_nama'=>$this->input->post('nama'),
+                'customers_nohp'=>$this->input->post('hp'),
+                'customers_lokasi'=>$this->input->post('lokasi'),
+                'customers_tanggal_acara'=>$this->input->post('tanggal'),
+                'customers_tglawal' =>$this->input->post('tanggal_chat'),
+                'customers_status'=>$this->input->post('status'));
+              $where = array('customers_id_session' => $this->input->post('id'));
+              $query = $this->db->update('customers',$data,$where);           
+              $data_history = array (
+                'log_activity_user_id'=>$this->session->id_session,
+                'log_activity_modul' => 'customer/edit_klien',
+                'log_activity_document_no' => $this->input->post('id'),
+                'log_activity_status' => 'Perbarui Klien',
+                'log_activity_platform'=> $agent,
+                'log_activity_ip'=> $this->input->ip_address()
+              );
+              $this->db->insert('log_activity', $data_history);           
+              redirect('customer/daftar_klien');
+            }else{
+
+              if ($this->session->level=='1')
+                {
+                  cek_session_akses('customer/klien_kuncitgl_tambah',$this->session->id_session);
+                  $proses = $this->Crud_m->view_where('customers', array('customers_id_session' => $id))->row_array();
+                  $data = array('records' => $proses);
+                  $this->load->view('backend/customers/v_klien_payment',$data);
+                }
+            elseif($this->session->level=='2')
+                {
+                  cek_session_akses_admin('harga/informasi_bisnis',$this->session->id_session);
+                  $proses = $this->Crud_m->edit('user_bisnis', array('user_bisnis_session' => $id))->row_array();
+                  $data = array('records' => $proses);
+                  $data['companys'] = $this->Crud_m->view_limit_ordering('user_company','user_company_id','ASC','20','1');
+                  $data['propinsi'] = $this->db->get('provinsi');
+                  $this->load->view('backend/customers/v_edit_klien_administrator',$data);
+                }
+            elseif($this->session->level=='3')
+                {
+                  cek_session_akses_level_3('harga/informasi_bisnis',$this->session->id_session);
+                  $proses = $this->Crud_m->edit('user_bisnis', array('user_bisnis_session' => $id))->row_array();
+                  $data = array('records' => $proses);
+                  $this->load->view('backend/customers/v_edit',$data);
+                }
+            elseif($this->session->level=='4')
+                {
+                  cek_session_akses_level_4('harga/informasi_bisnis',$this->session->id_session);
+                  $proses = $this->Crud_m->edit('user_bisnis', array('user_bisnis_session' => $id))->row_array();
+                  $data = array('records' => $proses);
+                  $this->load->view('backend/customers/v_edit',$data);
+                }
+            elseif($this->session->level=='5')
+                {
+                  cek_session_akses_level_5('harga/informasi_bisnis',$this->session->id_session);
+                  $proses = $this->Crud_m->edit('user_bisnis', array('user_bisnis_session' => $id))->row_array();
+                  $data = array('records' => $proses);
+                  $this->load->view('backend/customers/v_edit',$data);
+                }
+
+            }
+  }
+
   public function daftar_klien()
   {
        if ($this->session->level=='1')
