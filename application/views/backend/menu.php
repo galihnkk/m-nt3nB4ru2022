@@ -105,22 +105,13 @@
           </p>
         </a>
       </li>
-        <?php } ?>
+    <?php } ?>
 <!-- Baris Tutup Menu untuk Developer -->
 
 <!-- Baris Buka Menu untuk Developer,Administrator,Manager -->
-        <?php  if($this->session->level=='1' OR $this->session->level=='2'  OR $this->session->level=='4'){ ?>
+        <?php  if($this->session->level=='1' OR $this->session->level=='4'){ ?>
           <?php $users_company_account= $this->Crud_m->view_where_like_ordering1('user_company','user_company_account',$users_company['user_company_account'],'user_company_id','ASC'); ?>
-          <?php if($users_company['user_company_kategori'] == '1') { ?>
-            <li class="nav-item ">
-                <a href="#" class="nav-link ">
-                  <i class="nav-icon far fas fa-fw fa-users"></i>
-                  <p>
-                    Partner
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-            <?php }elseif($users_company['user_company_kategori'] == '2'){ ?>
+          <?php if($users_company['user_company_kategori'] == '2'){ ?>
             <?php  if($this->session->level=='1' OR $this->session->level=='2'){ ?>
                 <li class="nav-item ">
                         <a href="#" class="nav-link ">
@@ -297,6 +288,25 @@
          
         <?php } ?>
 <!-- Baris Tutup Menu untuk Developer,Administrator,Manager -->
+
+<?php  if($this->session->level=='2'){ ?>      
+      <li class="nav-item">
+        <a href="<?php echo base_url(); ?>aspanel/vendor_package" class="nav-link" >
+          <i class="nav-icon fas fa-cogs"></i>
+          <p>
+            Paket Pernikahan Vendor
+          </p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="<?php echo base_url(); ?>customer/daftar_klien" class="nav-link" >
+          <i class="nav-icon fas fa-cogs"></i>
+          <p>
+            Data Klien
+          </p>
+        </a>
+      </li>
+<?php } ?>
 
 <?php  if($this->session->level=='4' OR $this->session->level=='3' OR $this->session->level=='2'){ ?>
         <?php $this->load->view('backend/menu_list')?>

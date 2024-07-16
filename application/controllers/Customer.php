@@ -232,9 +232,9 @@ class Customer extends CI_Controller
         elseif($this->session->level=='2')
         {
           cek_session_akses_admin('customers',$this->session->id_session);
-          $data['record'] = $this->Crud_m->view_where_ordering('user_bisnis',array('user_bisnis_status'=>'1'),'id_bisnis','DESC');
+          $data['record'] = $this->Crud_m->view_where_ordering('customers',array('customers_status'=>'1'),'customers_id','DESC');
          
-          $this->load->view('backend/customers/v_daftar_administrator',$data);
+          $this->load->view('backend/customers/v_daftar_klien_administrator',$data);
         }
         elseif($this->session->level=='3')
         {

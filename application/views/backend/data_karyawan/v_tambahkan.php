@@ -54,9 +54,77 @@
                     </div>
                   </div>
                   <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input type="email" class="form-control" name="email" placeholder="Email Karyawan" required="required">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Username</label>
+                      <input type="text" class="form-control" name="username" placeholder="Username Karyawan" required="required">
+                    </div>
+                  </div>
+                  </div>
+                  <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                          <label for="inputName" class="col-sm-6 col-form-label">Jenis Kelamin</label>
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                      <label >Perusahaan</label>
+                        <select name='user_detail_company' class="form-control select2" style="width: 100%;" required='required'>
+                          <option value=''></option>
+                          <?php foreach ($records_company as $row) {
+
+                            if ($rows['user_detail_company'] == $row['user_company_id']){
+                              echo"<option selected='selected' value='$row[user_company_id]'>$row[user_company_account] | $row[user_company_nama]</option> ";
+                            }else{
+                              echo"<option value='$row[user_company_id]'>$row[user_company_account] | $row[user_company_nama]</option>";
+                         }
+                       } ?>
+                      </select>
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                      <label >Divisi</label>
+                        <select name='user_detail_divisi' class="form-control select2" style="width: 100%;"  required='required'>
+                          <option value=''></option>
+                          <?php foreach ($records_divisi as $row) {
+                            if ($rows['user_detail_divisi'] == $row['divisi_id']){
+                              echo"<option selected='selected' value='$row[divisi_id]'>$row[divisi_judul]</option>";
+                            }else{
+                              echo"<option value='$row[divisi_id]'>$row[divisi_judul]</option>";
+                         }
+                       } ?>
+                      </select>
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Level User</label>
+                        <select name='user_status' class="form-control select2" style="width: 100%;" required="required">
+                          <option value=''></option>
+                          <?php foreach ($records as $row) {
+                            if ($rows['user_level_id'] == $row['user_level_id']){
+                              echo"<option selected='selected' value='$row[user_level_id]'>$row[user_level_nama]</option>";
+                            }else{
+                              echo"<option value='$row[user_level_id]'>$row[user_level_nama]</option>";
+                         }
+                       } ?>
+                      </select>
+                    </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                          <label>Jenis Kelamin</label>
                           <select name='user_detail_jekel' class="form-control select2" style="width: 100%;">
                             <?php foreach ($records_kel as $row) {
                               if ($rows['user_kelamin_id'] == $row['user_kelamin_id']){
@@ -70,7 +138,7 @@
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label for="inputName" class="col-sm-6 col-form-label">Agama</label>
+                        <label >Agama</label>
                           <select name='user_detail_agama' class="form-control select2" style="width: 100%;">
                             <?php foreach ($records_agama as $row) {
                               if ($rows['user_agama_id'] == $row['user_agama_id']){
@@ -87,20 +155,20 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Tempat Lahir</label>
-                        <input type="text" class="form-control" name="user_detail_tempatlahir" placeholder="Tempat Lahir" required="required">
+                        <input type="text" class="form-control" name="user_detail_tempatlahir" placeholder="Tempat Lahir" >
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Tanggal Lahir</label>
-                        <input type="date" class="form-control" name="user_detail_tgllahir" required="required">
+                        <input type="date" class="form-control" name="user_detail_tgllahir" >
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label for="inputName" class="col-sm-6 col-form-label">Status Perkawinan</label>
+                        <label >Status Perkawinan</label>
                           <select name='user_detail_perkawinan' class="form-control select2" style="width: 100%;">
                             <?php foreach ($records_kawin as $row) {
                               if ($rows['user_perkawinan_id'] == $row['user_perkawinan_id']){
@@ -133,75 +201,9 @@
                       </div>
                     </div>
                   </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label>Email</label>
-                      <input type="email" class="form-control" name="email" placeholder="Email Karyawan" required="required">
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label>Username</label>
-                      <input type="text" class="form-control" name="username" placeholder="Username Karyawan" required="required">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <label>Password</label>
-                      <input type="password" class="form-control" name="password" placeholder="Password" required="required">
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-3 col-form-label">Perusahaan</label>
-                      <select name='user_detail_company' class="form-control select2" style="width: 100%;" required='required'>
-                        <option value=''></option>
-                        <?php foreach ($records_company as $row) {
-
-                          if ($rows['user_detail_company'] == $row['user_company_id']){
-                            echo"<option selected='selected' value='$row[user_company_id]'>$row[user_company_account] | $row[user_company_nama]</option> ";
-                          }else{
-                            echo"<option value='$row[user_company_id]'>$row[user_company_account] | $row[user_company_nama]</option>";
-                       }
-                     } ?>
-                    </select>
-                  </div>
-                  </div>
-                </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                    <div class="form-group">
-                      <label for="inputName" class="col-sm-3 col-form-label">Divisi</label>
-                        <select name='user_detail_divisi' class="form-control select2" style="width: 100%;"  required='required'>
-                          <option value=''></option>
-                          <?php foreach ($records_divisi as $row) {
-                            if ($rows['user_detail_divisi'] == $row['divisi_id']){
-                              echo"<option selected='selected' value='$row[divisi_id]'>$row[divisi_judul]</option>";
-                            }else{
-                              echo"<option value='$row[divisi_id]'>$row[divisi_judul]</option>";
-                         }
-                       } ?>
-                      </select>
-                    </div>
-                    </div>
-                    <div class="col-sm-6">
-                    <div class="form-group">
-                      <label for="inputName" class="col-sm-3 col-form-label">Level User</label>
-                        <select name='user_status' class="form-control select2" style="width: 100%;" required="required">
-                          <option value=''></option>
-                          <?php foreach ($records as $row) {
-                            if ($rows['user_level_id'] == $row['user_level_id']){
-                              echo"<option selected='selected' value='$row[user_level_id]'>$row[user_level_nama]</option>";
-                            }else{
-                              echo"<option value='$row[user_level_id]'>$row[user_level_nama]</option>";
-                         }
-                       } ?>
-                      </select>
-                    </div>
-                    </div>
+                
+                
+                  <div class="row">                  
 
                     <div class="col-sm-6">
                       <div class="form-group">
