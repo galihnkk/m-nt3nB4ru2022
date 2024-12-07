@@ -73,7 +73,7 @@ class User extends CI_Controller
     }
 		}
 
-  public function register()	{
+  public function register(){
       $this->form_validation->set_rules('username','','trim|required|is_unique[user.username]', array('trim' => '', 'required' => 'Username belum diisi','is_unique' => 'Username telah digunakan, silahkan gunakan username lain.'));
         $this->form_validation->set_rules('email','','trim|required|valid_email|is_unique[user.email]', array('trim' => '', 'required' => 'Email belum diisi','is_unique' => 'Email telah digunakan, silahkan gunakan email lain.'));
         $this->form_validation->set_rules('password','','trim|required', array('trim' => '', 'required' => 'Password belum diisi'));
@@ -137,8 +137,73 @@ class User extends CI_Controller
           $data['identitas']= $this->Crud_m->get_by_id_identitas($id='1');
           $this->load->view('fronts/user/v_register',$data);
         }
+  }
+  public function datapengantinmoeslem(){
+        $this->form_validation->set_rules('cpp_namaleng','','trim|required', array('trim' => '', 'required' => 'nama lengkap pengantin pria belum diisi'));
 
-      }
+
+        $this->form_validation->set_rules('email','','trim|required|valid_email|is_unique[user.email]', array('trim' => '', 'required' => 'Email belum diisi','is_unique' => 'Email telah digunakan, silahkan gunakan email lain.'));
+        $this->form_validation->set_rules('password','','trim|required', array('trim' => '', 'required' => 'Password belum diisi'));
+        $this->form_validation->set_rules('konfirmpassword','','trim|required|matches[password]', array('trim' => '', 'required' => 'Konfirmasi Password belum diisi','matches'=>'Password tidak sama! Cek kembali password Anda'));
+       
+        if($this->form_validation->run() != false){
+          if (isset($_POST['submit']))
+          {
+            $username = $this->input->post('username');
+            $email = $this->input->post('email');            
+            $password = sha1($this->input->post('password'));
+            $cek = $this->Crud_m->cek_register($username,$email,'user');
+              $total = $cek->num_rows();
+            if ($total > 0)
+              {
+              $data['title'] = 'Periksa kembali email dan password Anda!';
+              redirect(site_url('daftar'));
+              }else{
+                $saltid   = md5($email);
+                $aktivasi   = 0;
+                $data = array('username'=>$this->db->escape_str($this->input->post('username')),
+                                'password'=>sha1($this->input->post('password')),
+                                'email'=>$this->db->escape_str($this->input->post('email')),
+                                'user_status'=> $aktivasi,
+                                'user_post_hari'=>hari_ini(date('w')),
+                                'user_post_tanggal'=>date('Y-m-d'),
+                                'user_post_jam'=>date('H:i:s'),
+                                'level'=>'5',
+                                'user_stat'=>'verified',
+                                'id_session'=>md5($this->input->post('email')).'-'.date('YmdHis'));
+                $id_user_detail = $this->Crud_m->tambah_user($data);
+                $data_user_detail = array('id_user' => $id_user_detail);
+                if($this->Crud_m->tambah_user_detail($data_user_detail))
+                {
+                  if($this->sendemail($email,$saltid,$username))
+                                {
+                                    $this->session->set_flashdata('msg','<div class="alert bg-5 text-center">Segera lakukan aktivasi akun mantenbaru dari email anda. Harap merefresh pesan masuk di email Anda.</div>');
+                                    redirect(base_url('daftar')
+                                    );
+                            }else
+                                {
+                                  $this->session->set_flashdata('msg','<div class="alert bg-5 text-center">Email Verifikasi tidak terkirim</div>');
+                                  redirect(base_url('daftar'));
+                                }
+                }
+                $data['title'] = 'Sukses mendaftar';
+                $data['identitas']= $this->Crud_m->get_by_id_identitas($id='1');
+                $this->load->view('fronts/user/v_datapengantinmoeslem',$data);
+
+                }
+            }
+            else
+            {
+              $data['identitas']= $this->Crud_m->get_by_id_identitas($id='1');
+              $this->load->view('fronts/user/v_datapengantinmoeslem',$data);
+            }
+
+          } else{
+          $data['title'] = 'Ops.. Masih ada yang kurang. Silahkan dicek kembali.';
+          $data['identitas']= $this->Crud_m->get_by_id_identitas($id='1');
+          $this->load->view('fronts/user/v_datapengantinmoeslem',$data);
+        }
+  }
   public function sendemail($email,$saltid,$username){
         // configure the email setting
 
