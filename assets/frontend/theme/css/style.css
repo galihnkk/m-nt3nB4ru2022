@@ -1489,7 +1489,7 @@ nav li.type-4 .dropmenu .fa-chevron-right { display: none; }
 
 .main-wraper.color-2 .second-title h2 { color: #fff; }
 
-.second-title { position: relative; text-align: center; padding-top: 110px; padding-bottom: 65px; }
+.second-title { position: relative; text-align: left; padding-top: 110px; padding-bottom: 20px; }
 
 .second-title h2 { padding-bottom: 24px; letter-spacing: 6px; }
 
@@ -1510,6 +1510,10 @@ nav li.type-4 .dropmenu .fa-chevron-right { display: none; }
 .second-title.style-3 h2 { line-height: 40px; }
 
 .second-title.style-3 > *:last-child { padding-bottom: 0px; }
+
+.third-title { position: relative; text-align: right; padding-top: 110px; padding-bottom: 20px; }
+
+
 
 .second-description { font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 24px; font-weight: 400; margin-bottom: 30px; }
 
@@ -3076,7 +3080,7 @@ nav li.type-4 .dropmenu .fa-chevron-right { display: none; }
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 /* INNER-BANNER */
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-.inner-banner { position: relative; min-height: 150px; text-align: center; }
+.inner-banner { position: relative; min-height: 70px; text-align: center; }
 
 .inner-banner h2 { font-size: 38px; line-height: 40px; letter-spacing: 7.5px; margin-bottom: 20px; }
 

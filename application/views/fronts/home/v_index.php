@@ -31,14 +31,14 @@
     </div>
 
     <div class="main-wraper">
-      <div class="container">
+      <div class="container-fluid">
         <br>
         <div class="row">
        
           <div class="top-baner arrows">
-        <div class="swiper-container offers-slider" data-autoplay="5000" data-loop="1" data-speed="500" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="3" data-add-slides="3">
+        <div class="swiper-container offers-slider" data-autoplay="5000" data-loop="1" data-speed="500" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="4" data-lg-slides="4" data-add-slides="4">
           <div class="swiper-wrapper">
-              <?php $company = $this->Crud_m->view_where_ordering_limits('user_company',array('user_company_status'=>'1'),'user_company_account','ASC','1','20'); ?>
+              <?php $company = $this->Crud_m->view_where_ordering_limits('user_company',array('user_company_status'=>'1'),'user_company_account','ASC','1','12'); ?>
               <?php $no = 1; foreach ($company as $post) {  ?>
                       <div class="swiper-slide" >
                          <div class="offers-block radius-mask">
@@ -66,18 +66,716 @@
     </div>
     </div>
 
-    <div class="main-wraper padd-90">
-        <div class="container">
+    <div class="main-wraper">
+        <div class="container-fluid">
     		<div class="row">
-    			<div class="col-md-12">
+    			<div class="col-md-6">
     				<div class="second-title">
-    					<h2>Persiapkan Sekarang</h2>
+    					<h2>Gedung</h2>
+    					</div>
+    			</div>
+          <div class="col-md-6">
+    				<div class="third-title">
+            <a href="<?php echo base_url()?>vendors/kategori/gedung"><h4>Lihat semua Gedung</h4></a>
     					</div>
     			</div>
     		</div>
     		<div class="row">
     			   <div class="arrows">
-    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="4" data-add-slides="4">
+    				<div class="swiper-container hotel-slider" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5" >
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 2</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 3</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 4</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 5</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 6</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 7</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 8</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 9</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 10</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 11</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
+						  <div class="swiper-wrapper">
+                <?php
+                      foreach ($post_news as $post) {
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="hotel-item">
+                       <div class="radius-top">
+                         <a href="<?php echo base_url("harga-detail/$post->judul_seo") ?>">
+                         <img <?php if(empty($post->foto_h)) {echo "<img src='".base_url()."assets/frontend/campur/noimage_paket.jpg'>";}
+                                                 else { echo " <img src='".base_url()."assets/frontend/harga/".$post->foto_h."'> ";}
+                                                 ?>
+                          </a>
+
+                        <?php
+                        $b=$post->harga_diskon;
+                        $c=$post->harga;
+                        if(empty($post->harga_diskon)) { ?>
+
+                        <?php }else if($a = ($b/$c)*100 ){?>
+                          <div class="price price-s-1">
+                            <?php echo number_format($a,0,',','.')?>%
+                            </div>
+                        <?php }?>
+                       </div>
+                       <div class="title clearfix">
+                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                               <br>
+                          <span class="f-14 color-dark-2">
+                            <?php
+                            if(empty($post->harga_diskon)) { ?>
+                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <?php }else if($a = $post->harga - $post->harga_diskon ){?>
+                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                                Rp<?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+                          </span>
+                          <br>
+                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                       </div>
+                    </div>
+                  </div>
+                <?php } ?>
+						  </div>
+						<div class="pagination"></div>
+							<div class="swiper-arrow-left arrows-travel"><span class="fa fa-angle-left"></span></div>
+							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
+					</div>
+				  </div>
+    		</div>
+		</div>
+    <div class="main-wraper padd-90">
+        <div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="second-title">
+    					<h2>Persiapkan Sekarang 12</h2>
+    					</div>
+    			</div>
+    		</div>
+    		<div class="row">
+    			   <div class="arrows">
+    				<div class="swiper-container hotel-slider" data-autoplay="5000" data-loop="1" data-speed="1000" data-center="0" data-slides-per-view="responsive" data-mob-slides="1" data-xs-slides="2" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="5">
 						  <div class="swiper-wrapper">
                 <?php
                       foreach ($post_news as $post) {

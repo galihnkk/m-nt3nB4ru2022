@@ -50,7 +50,7 @@
           <div class="nav-menu-icon">
             <a href="#"><i></i></a>
           </div>
-          <nav class="menu">
+          <!-- <nav class="menu">
               <ul>
                 <li class="type-1">
                   <a style="color:#ff0066;" href="<?php echo base_url()?>">Home</a>
@@ -64,7 +64,7 @@
                   </ul>
                 </li>
               </ul>
-          </nav>
+          </nav> -->
         </div>
       </div>
     </div>

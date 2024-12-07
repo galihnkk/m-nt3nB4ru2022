@@ -125,6 +125,7 @@ $(function() {
 	function initSwiper(){
 		var initIterator = 0;
 		$('.swiper-container').each(function(){
+			console.log(initIterator);
 			var $t = $(this);
 
 			var index = 'swiper-unique-id-'+initIterator;
