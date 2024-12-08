@@ -18,11 +18,21 @@
                  <div class="contact-line color-grey-7"><i class="fa fa-globe"></i><a href=""><?=$identitas->alamat ?></a></div>
                    </div>
        </div></div>
+       
+       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-5">
+                  <div class="footer-block">
+                    <h6>Layanan Konsumen</h6>
+                    <div class="contact-line color-grey-7"></div>
+                    <h5>Pusat Bantuan</h5>
 
+               </ul>
+                  </div>
+          </div>
+       </div>
 
        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-5">
                   <div class="footer-block">
-                    <h6>Ikuti</h6>
+                    <h6>Social Media</h6>
                     <a  class="tags-b" href="https://api.whatsapp.com/send?phone=<?=$identitas->no_telp ?>&text=Hai,%20Mantenbaru%20.%20Bisa%20bantu%20saya%20?" target="_blank"><i class="fa fa-whatsapp"></i></a>
                     <a  class="tags-b" href="<?=$identitas->facebook ?>" target="_blank"><i class="fa fa-facebook"></i></a>
                     <a  class="tags-b" href="<?=$identitas->instagram ?>" target="_blank"><i class="fa fa-instagram"></i></a>
