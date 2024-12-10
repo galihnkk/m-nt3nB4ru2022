@@ -66,7 +66,7 @@
     </div>
     </div>
 
-    <div class="main-wraper">
+    <!-- <div class="main-wraper">
         <div class="container-fluid">
     		<div class="row">
     			<div class="col-md-6">
@@ -133,7 +133,7 @@
 					</div>
 				  </div>
     		</div>
-		</div>
+		</div> -->
     <div class="main-wraper">
         <div class="container-fluid">
     		<div class="row">

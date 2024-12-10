@@ -19,7 +19,7 @@
                    </div>
        </div></div>
        
-       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-5">
+       <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-5">
                   <div class="footer-block">
                     <h6>Layanan Konsumen</h6>
                     <div class="contact-line color-grey-7"></div>
@@ -28,7 +28,7 @@
                </ul>
                   </div>
           </div>
-       </div>
+       </div> -->
 
        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-5">
                   <div class="footer-block">
