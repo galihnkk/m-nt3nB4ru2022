@@ -498,6 +498,7 @@ b, strong { font-weight: 700; }
 .c-button:hover .img-hov { opacity: 1; }
 
 .c-button.small { font-size: 12px; padding: 11px 18px; -moz-border-radius: 6px; border-radius: 6px; }
+.c-button.small2 { font-size: 12px; padding: 11px 18px; -moz-border-radius: 6px; border-radius: 6px; width: 100%; }
 
 .c-button.big { padding: 17px 20px; }
 

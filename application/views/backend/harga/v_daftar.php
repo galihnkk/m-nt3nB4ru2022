@@ -102,6 +102,16 @@
                    <div class="card bg-light d-flex flex-fill">
                      <div class="card-header text-muted border-bottom-0">
                        <b><?=$row['judul'] ?> </b>
+                       <p>
+
+                       <?php $user_bisnis= $this->Crud_m->view_where('user_bisnis', array('username'=> $this->session->username))->row_array(); ?>
+                        <?php if ($row['id_harga'] == $user_bisnis['id_harga'] ){?>
+                         Pilihan Utama
+                        <?php } ?>
+ 
+                        
+                        
+                       </p>
                      </div>
                      <div class="card-body pt-0">
                        <div class="row">
@@ -114,11 +124,24 @@
 
                          </div>
                        </div>
+                       <div class="row">
+                         <?php
+                            if(empty($row['harga_diskon'])) { ?>
+                            Rp <?php echo number_format($row['harga'],0,',','.')?>
+                            <?php }else if($a = $row['harga'] - $row['harga_diskon'] ){?>
+                              <span font-size="20px" style="color:grey"><del> Rp <?php echo number_format($row['harga'],0,',','.')?></del></span>
+                                Rp <?php echo number_format($a,0,',','.')?>
+                            <?php }?>
+
+                       </div>
                      </div>
                      <div class="card-footer">
                        <div class="text-right">
                          <small> <?=$row['views'] ?> netizen</small>
-                         <a href="<?php echo base_url()?>harga/hapus_temp/<?php echo $row['id_harga'] ?>" onclick="return confirm('Yakin untuk menghapus <?=$row['judul'] ?> secara permanen?')"  class="btn btn-sm bg-teal">
+                         <a href="<?php echo base_url()?>harga/utama/<?php echo $row['id_harga'] ?>" onclick="return confirm('Yakin <?=$row['judul'] ?> untuk menjadikan harga utama ')"  class="btn btn-sm bg-teal">
+                           Jadikan Utama
+                         </a>
+                         <a href="<?php echo base_url()?>harga/hapus_temp/<?php echo $row['id_harga'] ?>" onclick="return confirm('Yakin untuk menghapus <?=$row['judul'] ?> secara permanen?')"  class="btn btn-sm btn-danger">
                            <i class="fas fa-trash"></i> Hapus
                          </a>
                          <a href="<?php echo base_url()?>harga/edit/<?php echo $row['id_harga'] ?>" class="btn btn-sm btn-primary">

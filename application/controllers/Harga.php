@@ -383,6 +383,96 @@ class Harga extends CI_Controller
 
 			redirect('harga');
 	}
+
+  public function utama()
+  {
+    if ($this->agent->is_browser())
+        {
+              $agent = 'Desktop ' .$this->agent->browser().' '.$this->agent->version();
+        }
+        elseif ($this->agent->is_robot())
+        {
+              $agent = $this->agent->robot();
+        }
+        elseif ($this->agent->is_mobile())
+        {
+              $agent = 'Mobile' .$this->agent->mobile().''.$this->agent->version();
+        }
+        else
+        {
+              $agent = 'Unidentified User Agent';
+        }
+    if ($this->session->level=='1'){
+      cek_session_akses('harga',$this->session->id_session);
+      $data = array('id_harga'=>$this->uri->segment(3));
+      $where = array('username' => $this->session->username);
+      $this->db->update('user_bisnis', $data, $where);
+      $data_history_addcompany = array (
+        'log_activity_user_id'=>$this->session->id_user,
+        'log_activity_modul' => 'harga/informasi',
+        'log_activity_status' => 'Update ID Harga '.$this->uri->segment(3),
+        'log_activity_platform'=> $agent,
+        'log_activity_ip'=> $this->input->ip_address()
+      );
+      $this->db->insert('log_activity', $data_history_addcompany);
+      }else if ($this->session->level=='2'){
+        cek_session_akses_admin('harga',$this->session->id_session);
+        $data = array('harga_status'=>'0');
+        $where = array('id_harga' => $this->uri->segment(3));
+        $this->db->update('harga', $data, $where);
+              $data_history_addcompany = array (
+                'log_activity_user_id'=>$this->session->id_user,
+                'log_activity_modul' => 'Hapus Harga',
+                'log_activity_status' => 'Hapus Harga '.$this->uri->segment(3),
+                'log_activity_platform'=> $agent,
+                'log_activity_ip'=> $this->input->ip_address()
+              );
+              $this->db->insert('log_activity', $data_history_addcompany);
+      }else if ($this->session->level=='3'){
+        cek_session_akses_level_3('harga',$this->session->id_session);
+        $data = array('harga_status'=>'0');
+        $where = array('id_harga' => $this->uri->segment(3));
+        $this->db->update('harga', $data, $where);
+              $data_history_addcompany = array (
+                'log_activity_user_id'=>$this->session->id_user,
+                'log_activity_modul' => 'Hapus Harga',
+                'log_activity_status' => 'Hapus Harga '.$this->uri->segment(3),
+                'log_activity_platform'=> $agent,
+                'log_activity_ip'=> $this->input->ip_address()
+              );
+              $this->db->insert('log_activity', $data_history_addcompany);
+      }else if ($this->session->level=='4'){
+        cek_session_akses_level_4('harga',$this->session->id_session);
+        $data = array('id_harga'=>$this->uri->segment(3));
+        $where = array('username' => $this->session->username);
+        $this->db->update('user_bisnis', $data, $where);
+        $data_history_addcompany = array (
+        'log_activity_user_id'=>$this->session->id_user,
+        'log_activity_modul' => 'harga/informasi',
+        'log_activity_status' => 'Update ID Harga '.$this->uri->segment(3),
+                'log_activity_platform'=> $agent,
+                'log_activity_ip'=> $this->input->ip_address()
+              );
+              $this->db->insert('log_activity', $data_history_addcompany);
+      }else if ($this->session->level=='5'){
+        cek_session_akses_level_5('harga',$this->session->id_session);
+        $data = array('harga_status'=>'0');
+        $where = array('id_harga' => $this->uri->segment(3));
+        $this->db->update('harga', $data, $where);
+              $data_history_addcompany = array (
+                'log_activity_user_id'=>$this->session->id_user,
+                'log_activity_modul' => 'Hapus Harga',
+                'log_activity_status' => 'Hapus Harga '.$this->uri->segment(3),
+                'log_activity_platform'=> $agent,
+                'log_activity_ip'=> $this->input->ip_address()
+              );
+              $this->db->insert('log_activity', $data_history_addcompany);
+      } else{
+
+      }
+
+      redirect('harga');
+  }
   public function kembalikan()
 	{
 		if ($this->agent->is_browser())
