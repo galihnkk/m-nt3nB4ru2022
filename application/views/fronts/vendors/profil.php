@@ -60,10 +60,10 @@
 											</div>
 										</div>
 											<div class="contact-line"><p><i class="fa fa-map-marker"></i><a href="#"> <?php echo $kecamatan->nama_kec?> - <?php echo $kabupaten->nama?></p></a></div>
-											<div class="contact-line"><p><strong>Media Sosial</strong></p></div>
+											<!-- <div class="contact-line"><p><strong>Media Sosial</strong></p></div>
 											<div class="contact-line">
-												<a target="_blank" href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.%20Bisa%20bantu%20saya?" class="button-s-2 bg-4 m-right"><i class="fa fa-whatsapp"> WA</i></a>
-                        <?php if(empty($post_v->fb)) { ?>
+												<a target="_blank" href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.%20Bisa%20bantu%20saya?" class="button-s-2 bg-4 m-right"><i class="fa fa-whatsapp"> WA</i></a> -->
+                        <!-- <?php if(empty($post_v->fb)) { ?>
                         <?php }else{ ?>
                           <a target="_blank" href="https://www.facebook.com/<?php echo $post_v->fb?>" class="button-s-2 bg-7 m-right"><i class="fa fa-facebook"> FB</i></a>
                         <?php } ?>
@@ -76,15 +76,15 @@
                           <a target="_blank" href="https://www.youtube.com/channel/<?php echo $post_v->ytb?>" class="button-s-2 bg-5 m-right"><i class="fa fa-youtube"> YT</i></a>
                         <?php } ?>
                         
-                      </div>
+                      </div> -->
 											<hr>
 											<div class="contact-line">
 												<center><a href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.%20Saya%20mau%20tanya-tanya%20dulu." class="c-button small bg-dr-blue-2 hv-dr-blue-2-o"><i class="fa fa-comments-o"> Konsultasi Free</i></a></center>
 											</div>
-											<br>
+											<!-- <br>
 											<div class="row contact-line">
 												<center><a href="https://api.whatsapp.com/send?phone=+62<?php echo $post_v->nomerbisnis?>&text=Halo,%20Saya%20menemukan%20<?php echo $post_v->namabisnis?>%20di%20Mantenbaru.%20Saya%20mau%20tanya%20harga%20dulu." class="c-button small bg-dr-blue-2 hv-dr-blue-2-o"><i class="fa fa-question-circle"> Cek Detail Harga</i></a></center>
-											</div>
+											</div> -->
 											<hr>
 											<div class="contact-line"><p><strong>Tentang <?php echo $post_v->namabisnis?></strong></p></div>
 											<div class="contact-line"><p><?php echo $post_v->tentangbisnis?></p></div>
