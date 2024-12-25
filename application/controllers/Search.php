@@ -5,8 +5,8 @@ class Search extends CI_Controller {
 
     public function index() {
         $this->data['identitas']= $this->Crud_m->get_by_id_identitas($id='1');
-        $query = $this->input->post('query');
-        if (empty($query)) {
+        $query = trim($this->input->post('query'));
+        if (empty($query) || strlen($query) == 0) {
             $this->data['results'] = [];
         } else {
             $this->load->model('Search_model');
