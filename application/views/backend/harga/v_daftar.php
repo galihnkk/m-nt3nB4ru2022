@@ -138,8 +138,8 @@
                      <div class="card-footer">
                        <div class="text-right">
                          <small> <?=$row['views'] ?> netizen</small>
-                         <a href="<?php echo base_url()?>harga/utama/<?php echo $row['id_harga'] ?>" onclick="return confirm('Yakin <?=$row['judul'] ?> untuk menjadikan harga utama ')"  class="btn btn-sm bg-teal">
-                           Jadikan Utama
+                         <a href="<?php echo base_url()?>harga/utama/<?php echo $row['id_harga'] ?>" onclick="return confirm('Yakin <?=$row['judul'] ?> untuk dijadikan tampilan utama? ')"  class="btn btn-sm bg-teal">
+                           Jadikan Tampilan Utama
                          </a>
                          <a href="<?php echo base_url()?>harga/hapus_temp/<?php echo $row['id_harga'] ?>" onclick="return confirm('Yakin untuk menghapus <?=$row['judul'] ?> secara permanen?')"  class="btn btn-sm btn-danger">
                            <i class="fas fa-trash"></i> Hapus
