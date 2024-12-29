@@ -120,15 +120,16 @@ class Crud_m extends CI_model{
   }
 
 
-  public function view_where_join_three_limit($table1,$table2,$table3,$table4,$field1,$field2,$fieldlimit,$where){
-      $this->db->select('*');
-      $this->db->from($table1);
-      $this->db->join($table2, $table1.'.'.$field1.'='.$table2.'.'.$field1);
-      $this->db->join($table3, $table2.'.'.$field2.'='.$table3.'.'.$field2);
-      $this->db->join($table4, $table2.'.'.$this->kabupaten.'='.$table4.'.'.$this->id_kabupaten);
-      $this->db->limit($fieldlimit);
-      $this->db->where($where);
-      return $this->db->get()->result();
+  public function view_where_join_three_limit($table1, $table2, $table3, $table4, $field1, $field2, $fieldlimit, $where, $order = 'RAND()') {
+    $this->db->select('*');
+    $this->db->from($table1);
+    $this->db->join($table2, $table1.'.'.$field1.'='.$table2.'.'.$field1);
+    $this->db->join($table3, $table2.'.'.$field2.'='.$table3.'.'.$field2);
+    $this->db->join($table4, $table2.'.'.$this->kabupaten.'='.$table4.'.'.$this->id_kabupaten);
+    $this->db->where($where);
+    $this->db->order_by($order);
+    $this->db->limit($fieldlimit);
+    return $this->db->get()->result();
   }
 
   public function view_where_join_three($table1,$table2,$table3,$table4,$field1,$field2,$where){
