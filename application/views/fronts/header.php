@@ -1,6 +1,6 @@
 <header class="bg-white color-4 header-style-2">
   <div class="top-header-bar">
-     <div class="container">
+     <div class="container-fluid">
        <div class="row">
         <div class="col-md-12">
           <div class="header-bar">

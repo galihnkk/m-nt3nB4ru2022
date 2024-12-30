@@ -177,6 +177,8 @@ body.background-block { background-repeat: no-repeat; background-position: cente
 
 .row10 { margin-right: -5px; margin-left: -5px; }
 
+.px25 { padding-right: 25px; padding-left: 25px; }
+
 .col10 { padding-right: 5px; padding-left: 5px; }
 
 .row30 { margin-right: -30px; margin-left: -30px; }
@@ -5160,7 +5162,7 @@ video.bgvid {position: absolute; right: 0; bottom: 0; min-width: 100%; min-heigh
 .header-style-2 .top-header-block {display: none;}
 .header-style-2 .form-block {float: right;}
 .header-style-2 .input-style-1 {max-width: 180px;}
-.header-style-2 .input-style-1.color-3 input {background: #ccffff; border: 0px none; height: 40px; padding: 0px 10px 0px 35px;}
+.header-style-2 .input-style-1.color-3 input {background: #fafafa; border: 0px none; height: 40px; padding: 0px 10px 0px 35px;}
 .header-style-2 nav > ul > li > a {border-radius: 0px;}
 .header-style-2 .input-style-1.b-50 img {left: 10px;}
 .header-style-2 .drop-wrap {max-width: 77px; float: right;}
