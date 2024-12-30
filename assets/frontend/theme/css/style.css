@@ -957,7 +957,7 @@ strong {
 	display: inline-block;
 }
 
-.f-14 {
+.f-16 {
 	font-size: 14px;
 	line-height: 24px;
 	display: inline-block;
@@ -5963,7 +5963,7 @@ nav li.type-4 .dropmenu .fa-chevron-right {
 }
 
 .price-s-1 {
-	background: rgba(0, 0, 0, 0.3);
+	background: #ed0c7d;
 	padding: 10px 10px;
 	color: #fff;
 	position: absolute;
@@ -6096,8 +6096,12 @@ nav li.type-4 .dropmenu .fa-chevron-right {
 	line-height: 18px;
 }
 
-.hotel-item .title span.f-14 {
-	font-size: 12px;
+.hotel-item .title span.f-16 {
+	font-size: 16px;
+}
+
+.hotel-item .title span.f-11 {
+	font-size: 11px;
 }
 
 .hotel-item .c-price {
@@ -15416,10 +15420,10 @@ textarea {
 	font-weight: 700;
 	z-index: 5;
 }
-.rental-item .f-14 img {
+.rental-item .f-16 img {
 	margin-right: 5px;
 }
-.rental-item .f-14 {
+.rental-item .f-16 {
 	padding-bottom: 10px;
 }
 .rental-item h4 a {
@@ -15430,11 +15434,11 @@ textarea {
 	font-weight: 700;
 	text-transform: none;
 }
-.tours-item span.f-14 {
+.tours-item span.f-16 {
 	display: inline-block;
 	padding: 10px 0px 0px;
 }
-.tours-item span.f-14 img {
+.tours-item span.f-16 img {
 	margin-right: 5px;
 	vertical-align: middle;
 }
@@ -18093,7 +18097,7 @@ body[data-color="theme-1"] .bg-grey {
 	background: #ed0c7d;
 }
 body[data-color="theme-1"] .arrows-travel {
-	background: #ed0c7d;
+	background: rgba(0, 0, 0, 0.3);
 }
 body[data-color="theme-1"] .find-form {
 	background: #ed0c7d;

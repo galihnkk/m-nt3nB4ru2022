@@ -30,8 +30,8 @@
 
     </div>
 
-    <div class="main-wraper px25">
-      <div class="container-fluid">
+    <div class="main-wraper">
+      <div class="container-fluid px100">
         <br>
         <div class="row">
        
@@ -109,19 +109,19 @@
                         <?php }?>
                        </div>
                        <div class="title clearfix">
-                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
+                         <span font-size="40px"><?php echo $post->namabisnis?></strong></span>
                                <br>
-                          <span class="f-14 color-dark-2">
+                          <span class="f-16 color-dark-2">
                             <?php
                             if(empty($post->harga_diskon)) { ?>
-                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <strong>Rp<?php echo number_format($post->harga,0,',','.')?>
                             <?php }else if($a = $post->harga - $post->harga_diskon ){?>
                               <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
                                 Rp<?php echo number_format($a,0,',','.')?>
                             <?php }?>
                           </span>
                           <br>
-                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                        <span class="f-16 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
                        </div>
                     </div>
                   </div>
@@ -185,19 +185,22 @@
                         <?php }?>
                        </div>
                        <div class="title clearfix">
-                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
-                               <br>
-                          <span class="f-14 color-dark-2">
+                         <span class="f-16" font-size="40px"><?php echo $post->namabisnis?></span>
+                         <br>
+                          <span class="f-11 color-dark-2">
+                            <?php echo $post->user_company_judul?> <?php echo $post->nama?>
+                            <br>
                             <?php
                             if(empty($post->harga_diskon)) { ?>
-                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <span class="f-16"><strong>Rp<?php echo number_format($post->harga,0,',','.')?></strong></span>
                             <?php }else if($a = $post->harga - $post->harga_diskon ){?>
-                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
-                                Rp<?php echo number_format($a,0,',','.')?>
+                              <span class="f-11" font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                              <br>  
+                              <span class ="f-16"><strong>Rp<?php echo number_format($a,0,',','.')?></strong>
                             <?php }?>
                           </span>
-                          <br>
-                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                          <!-- <br> -->
+                        <!-- <span class="f-11 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span> -->
                        </div>
                     </div>
                   </div>
@@ -268,19 +271,22 @@
                         <?php }?>
                        </div>
                        <div class="title clearfix">
-                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
-                               <br>
-                          <span class="f-14 color-dark-2">
+                       <span class="f-16" font-size="40px"><?php echo $post->namabisnis?></span>
+                         <br>
+                          <span class="f-11 color-dark-2">
+                            <?php echo $post->user_company_judul?> <?php echo $post->nama?>
+                            <br>
                             <?php
                             if(empty($post->harga_diskon)) { ?>
-                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <span class="f-16"><strong>Rp<?php echo number_format($post->harga,0,',','.')?></strong></span>
                             <?php }else if($a = $post->harga - $post->harga_diskon ){?>
-                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
-                                Rp<?php echo number_format($a,0,',','.')?>
+                              <span class="f-11" font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                              <br>  
+                              <span class ="f-16"><strong>Rp<?php echo number_format($a,0,',','.')?></strong>
                             <?php }?>
                           </span>
-                          <br>
-                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                          <!-- <br> -->
+                        <!-- <span class="f-11 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span> -->
                        </div>
                     </div>
                   </div>
@@ -346,19 +352,22 @@
                         <?php }?>
                        </div>
                        <div class="title clearfix">
-                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
-                               <br>
-                          <span class="f-14 color-dark-2">
+                       <span class="f-16" font-size="40px"><?php echo $post->namabisnis?></span>
+                         <br>
+                          <span class="f-11 color-dark-2">
+                            <?php echo $post->user_company_judul?> <?php echo $post->nama?>
+                            <br>
                             <?php
                             if(empty($post->harga_diskon)) { ?>
-                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <span class="f-16"><strong>Rp<?php echo number_format($post->harga,0,',','.')?></strong></span>
                             <?php }else if($a = $post->harga - $post->harga_diskon ){?>
-                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
-                                Rp<?php echo number_format($a,0,',','.')?>
+                              <span class="f-11" font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                              <br>  
+                              <span class ="f-16"><strong>Rp<?php echo number_format($a,0,',','.')?></strong>
                             <?php }?>
                           </span>
-                          <br>
-                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                          <!-- <br> -->
+                        <!-- <span class="f-11 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span> -->
                        </div>
                     </div>
                   </div>
@@ -424,19 +433,22 @@
                         <?php }?>
                        </div>
                        <div class="title clearfix">
-                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
-                               <br>
-                          <span class="f-14 color-dark-2">
+                         <span class="f-16" font-size="40px"><?php echo $post->namabisnis?></span>
+                         <br>
+                          <span class="f-11 color-dark-2">
+                            <?php echo $post->user_company_judul?> <?php echo $post->nama?>
+                            <br>
                             <?php
                             if(empty($post->harga_diskon)) { ?>
-                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <span class="f-16"><strong>Rp<?php echo number_format($post->harga,0,',','.')?></strong></span>
                             <?php }else if($a = $post->harga - $post->harga_diskon ){?>
-                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
-                                Rp<?php echo number_format($a,0,',','.')?>
+                              <span class="f-11" font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                              <br>  
+                              <span class ="f-16"><strong>Rp<?php echo number_format($a,0,',','.')?></strong>
                             <?php }?>
                           </span>
-                          <br>
-                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                          <!-- <br> -->
+                        <!-- <span class="f-11 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span> -->
                        </div>
                     </div>
                   </div>
@@ -502,19 +514,22 @@
                         <?php }?>
                        </div>
                        <div class="title clearfix">
-                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
-                               <br>
-                          <span class="f-14 color-dark-2">
+                         <span class="f-16" font-size="40px"><?php echo $post->namabisnis?></span>
+                         <br>
+                          <span class="f-11 color-dark-2">
+                            <?php echo $post->user_company_judul?> <?php echo $post->nama?>
+                            <br>
                             <?php
                             if(empty($post->harga_diskon)) { ?>
-                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <span class="f-16"><strong>Rp<?php echo number_format($post->harga,0,',','.')?></strong></span>
                             <?php }else if($a = $post->harga - $post->harga_diskon ){?>
-                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
-                                Rp<?php echo number_format($a,0,',','.')?>
+                              <span class="f-11" font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                              <br>  
+                              <span class ="f-16"><strong>Rp<?php echo number_format($a,0,',','.')?></strong>
                             <?php }?>
                           </span>
-                          <br>
-                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                          <!-- <br> -->
+                        <!-- <span class="f-11 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span> -->
                        </div>
                     </div>
                   </div>
@@ -580,19 +595,22 @@
                         <?php }?>
                        </div>
                        <div class="title clearfix">
-                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
-                               <br>
-                          <span class="f-14 color-dark-2">
+                         <span class="f-16" font-size="40px"><?php echo $post->namabisnis?></span>
+                         <br>
+                          <span class="f-11 color-dark-2">
+                            <?php echo $post->user_company_judul?> <?php echo $post->nama?>
+                            <br>
                             <?php
                             if(empty($post->harga_diskon)) { ?>
-                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <span class="f-16"><strong>Rp<?php echo number_format($post->harga,0,',','.')?></strong></span>
                             <?php }else if($a = $post->harga - $post->harga_diskon ){?>
-                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
-                                Rp<?php echo number_format($a,0,',','.')?>
+                              <span class="f-11" font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                              <br>  
+                              <span class ="f-16"><strong>Rp<?php echo number_format($a,0,',','.')?></strong>
                             <?php }?>
                           </span>
-                          <br>
-                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                          <!-- <br> -->
+                        <!-- <span class="f-11 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span> -->
                        </div>
                     </div>
                   </div>
@@ -658,19 +676,22 @@
                         <?php }?>
                        </div>
                        <div class="title clearfix">
-                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
-                               <br>
-                          <span class="f-14 color-dark-2">
+                         <span class="f-16" font-size="40px"><?php echo $post->namabisnis?></span>
+                         <br>
+                          <span class="f-11 color-dark-2">
+                            <?php echo $post->user_company_judul?> <?php echo $post->nama?>
+                            <br>
                             <?php
                             if(empty($post->harga_diskon)) { ?>
-                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <span class="f-16"><strong>Rp<?php echo number_format($post->harga,0,',','.')?></strong></span>
                             <?php }else if($a = $post->harga - $post->harga_diskon ){?>
-                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
-                                Rp<?php echo number_format($a,0,',','.')?>
+                              <span class="f-11" font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                              <br>  
+                              <span class ="f-16"><strong>Rp<?php echo number_format($a,0,',','.')?></strong>
                             <?php }?>
                           </span>
-                          <br>
-                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                          <!-- <br> -->
+                        <!-- <span class="f-11 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span> -->
                        </div>
                     </div>
                   </div>
@@ -736,19 +757,22 @@
                         <?php }?>
                        </div>
                        <div class="title clearfix">
-                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
-                               <br>
-                          <span class="f-14 color-dark-2">
+                         <span class="f-16" font-size="40px"><?php echo $post->namabisnis?></span>
+                         <br>
+                          <span class="f-11 color-dark-2">
+                            <?php echo $post->user_company_judul?> <?php echo $post->nama?>
+                            <br>
                             <?php
                             if(empty($post->harga_diskon)) { ?>
-                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <span class="f-16"><strong>Rp<?php echo number_format($post->harga,0,',','.')?></strong></span>
                             <?php }else if($a = $post->harga - $post->harga_diskon ){?>
-                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
-                                Rp<?php echo number_format($a,0,',','.')?>
+                              <span class="f-11" font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                              <br>  
+                              <span class ="f-16"><strong>Rp<?php echo number_format($a,0,',','.')?></strong>
                             <?php }?>
                           </span>
-                          <br>
-                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                          <!-- <br> -->
+                        <!-- <span class="f-11 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span> -->
                        </div>
                     </div>
                   </div>
@@ -814,19 +838,22 @@
                         <?php }?>
                        </div>
                        <div class="title clearfix">
-                         <span font-size="40px"><strong><?php echo $post->namabisnis?></strong></span>
-                               <br>
-                          <span class="f-14 color-dark-2">
+                         <span class="f-16" font-size="40px"><?php echo $post->namabisnis?></span>
+                         <br>
+                          <span class="f-11 color-dark-2">
+                            <?php echo $post->user_company_judul?> <?php echo $post->nama?>
+                            <br>
                             <?php
                             if(empty($post->harga_diskon)) { ?>
-                            Rp<?php echo number_format($post->harga,0,',','.')?>
+                            <span class="f-16"><strong>Rp<?php echo number_format($post->harga,0,',','.')?></strong></span>
                             <?php }else if($a = $post->harga - $post->harga_diskon ){?>
-                              <span font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
-                                Rp<?php echo number_format($a,0,',','.')?>
+                              <span class="f-11" font-size="20px" style="color:grey"><del>Rp<?php echo number_format($post->harga,0,',','.')?></del></span>
+                              <br>  
+                              <span class ="f-16"><strong>Rp<?php echo number_format($a,0,',','.')?></strong>
                             <?php }?>
                           </span>
-                          <br>
-                        <span class="f-14 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span>
+                          <!-- <br> -->
+                        <!-- <span class="f-11 color-dark-2"><?php echo $post->user_company_judul?> <?php echo $post->nama?></span> -->
                        </div>
                     </div>
                   </div>

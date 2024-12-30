@@ -198,7 +198,7 @@
                                           </a>
                                       </div>
                                       <div class="title">
-                                          <span class="f-14 color-dark-2">
+                                          <span class="f-16 color-dark-2">
                                             <span font-size="20px"> <strong><?php echo $post['judul'] ?></strong></span>
                                             <br>
                                             <?php
@@ -246,7 +246,7 @@
                                           </a>
                                       </div>
                                       <div class="title">
-                                          <span class="f-14 color-dark-2">
+                                          <span class="f-16 color-dark-2">
                                             <span font-size="20px"> <strong><?php echo $post['judul'] ?></strong></span>
                                             <br>
                                             <?php
@@ -295,7 +295,7 @@
                                           </a>
                                       </div>
                                       <div class="title">
-                                          <span class="f-14 color-dark-2">
+                                          <span class="f-16 color-dark-2">
                                             <span font-size="20px"> <strong><?php echo $post->judul ?></strong></span>
                                             <br>
                                             <?php
@@ -344,7 +344,7 @@
                                           </a>
                                       </div>
                                       <div class="title">
-                                          <span class="f-14 color-dark-2">
+                                          <span class="f-16 color-dark-2">
                                             <span font-size="20px"> <strong><?php echo $post->judul ?></strong></span>
                                             <br>
                                             <?php
@@ -393,7 +393,7 @@
                                           </a>
                                       </div>
                                       <div class="title">
-                                          <span class="f-14 color-dark-2">
+                                          <span class="f-16 color-dark-2">
                                             <span font-size="20px"> <strong><?php echo $post->judul ?></strong></span>
                                             <br>
                                             <?php
