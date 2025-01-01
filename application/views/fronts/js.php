@@ -7,6 +7,8 @@
 <script src="<?php echo base_url()?>assets/frontend/theme/js/isotope.pkgd.min.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/theme/js/jquery.circliful.min.js"></script>
 <script src="<?php echo base_url()?>assets/frontend/theme/js/all.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/theme/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo base_url()?>assets/frontend/theme/js/popper.min.js"></script>
 <div id="fb-root"></div>
            <script>(function(d, s, id) {
              var js, fjs = d.getElementsByTagName(s)[0];

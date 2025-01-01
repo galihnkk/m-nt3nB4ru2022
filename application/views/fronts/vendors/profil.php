@@ -25,6 +25,13 @@
     <link rel="shortcut icon" href="<?php echo base_url()?>assets/frontend/campur/<?=$identitas->favicon ?>" type="image/x-icon">
 
     <?php $this->load->view('fronts/css')?>
+	<style>
+        .carousel-item img {
+            object-fit: cover;  /* Gambar akan tetap mengisi area tanpa merubah rasio */
+            width: 100%;         /* Lebar gambar mengikuti container */
+            height: 400px;       /* Tentukan tinggi slider yang konsisten */
+        }
+    </style>
   </head>
 
 
@@ -106,7 +113,7 @@
 							 				<div class="simple-tab bg-white tab-3 color-3 tab-wrapper">
 							 					<div class="tab-nav-wrapper">
 							 						<div class="nav-tab  clearfix">
-                            <div class="nav-tab-item">
+                            <!-- <div class="nav-tab-item">
 							 							    <?php $jmla_harga = $this->Crud_m->view_where3('harga',$post_v->username,'1')->num_rows(); ?>
 							 								Harga(<?php echo $jmla_harga; ?>)
 							 							</div>
@@ -117,8 +124,40 @@
 
 														<div class="nav-tab-item">
 							 								Ulasan
-							 							</div>
+							 							</div> -->
+														 <div id="projekCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <?php
+            if (!empty($projek_utama)) {
+                // Ambil data projek_utama (asumsi hanya ada 1 projek untuk contoh ini)
+                $projek = $projek_utama[0];  // Misalnya ambil projek pertama
 
+                // Loop untuk foto1 sampai foto5
+                for ($i = 1; $i <= 5; $i++) {
+                    $foto = $projek->{'foto' . $i};
+                    if (!empty($foto)) {
+                        $activeClass = ($i == 1) ? 'active' : '';  // Menandai slide pertama sebagai active
+                        echo '
+                        <div class="carousel-item ' . $activeClass . '">
+                            <img src="' . base_url('assets/frontend/projek/' . $foto) . '" class="d-block w-100" alt="Foto ' . $i . '">
+                        </div>
+                        ';
+                    }
+                }
+            }
+            ?>
+        </div>
+
+        <!-- Kontrol Slider -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#projekCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#projekCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 							 						</div>
 							 					</div>
 							 					<div class="tabs-content clearfix">

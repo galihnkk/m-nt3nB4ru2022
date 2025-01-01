@@ -62,6 +62,8 @@ public function read($id)
 
 					$this->data['post_harga']= $this->Crud_m->view_ones('harga','harga','ASC');
 					$this->data['post_projek']= $this->Crud_m->view_ones('projek','id_projek','DESC');
+					$this->data['projek_utama']= $this->Crud_m->projek_utama($id);
+					// var_dump($this->data['projek_utama']); die;
     			$this->data['identitas']= $this->Crud_m->get_by_id_identitas($id='1');
     			$this->load->view('fronts/vendors/profil', $this->data);
     		}else{

@@ -67,6 +67,12 @@ class Crud_m extends CI_model{
       $this->db->where('projek_status',$data2);
       return $this->db->get($table);
   }
+  public function projek_utama($id_bisnis){
+    $this->db->select('projek.*');
+    $this->db->from('user_bisnis');
+    $this->db->join('projek','user_bisnis.id_projek = projek.id_projek','inner');
+    return $this->db->get()->result();
+}
 
   public function verifyemail($key)
   {
