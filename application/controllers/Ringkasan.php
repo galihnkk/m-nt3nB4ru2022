@@ -778,6 +778,42 @@ class Ringkasan extends CI_Controller
 
 			redirect('ringkasan');
 	}
-
+	public function utama()
+	{
+	  if ($this->agent->is_browser())
+		  {
+				$agent = 'Desktop ' .$this->agent->browser().' '.$this->agent->version();
+		  }
+		  elseif ($this->agent->is_robot())
+		  {
+				$agent = $this->agent->robot();
+		  }
+		  elseif ($this->agent->is_mobile())
+		  {
+				$agent = 'Mobile' .$this->agent->mobile().''.$this->agent->version();
+		  }
+		  else
+		  {
+				$agent = 'Unidentified User Agent';
+		  }
+	  if ($this->session->level=='1' || $this->session->level=='4'){
+		cek_session_akses_level_1_and_4($this->session->id_session);
+		$data = array('id_projek'=>$this->uri->segment(3));
+		$where = array('username' => $this->session->username);
+		$this->db->update('user_bisnis', $data, $where);
+		$data_history_addcompany = array (
+		  'log_activity_user_id'=>$this->session->id_user,
+		  'log_activity_modul' => 'projek/informasi',
+		  'log_activity_status' => 'Update ID Projek '.$this->uri->segment(3),
+		  'log_activity_platform'=> $agent,
+		  'log_activity_ip'=> $this->input->ip_address()
+		);
+		$this->db->insert('log_activity', $data_history_addcompany);
+		} else{
+  
+		}
+  
+		redirect('ringkasan');
+	}
 
 }

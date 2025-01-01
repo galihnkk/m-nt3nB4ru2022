@@ -39,6 +39,14 @@ function cek_session_akses_level_5($id){
   }
 }
 
+function cek_session_akses_level_1_and_4($id){
+  $ci = & get_instance();
+  $session = $ci->db->query("SELECT * FROM user WHERE user.id_session='$id'")->num_rows();
+  if ($session == '0' AND ($ci->session->userdata('level') != '1' || $ci->session->userdata('level') != '4')){
+    redirect(base_url().'aspanel/home');
+  }
+}
+
 function cek_session_akses_supervisor($id){
   $ci = & get_instance();
   $session = $ci->db->query("SELECT * FROM user WHERE user.id_session='$id'")->num_rows();

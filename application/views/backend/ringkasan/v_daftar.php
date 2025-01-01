@@ -102,7 +102,13 @@
                    <div class="card bg-light d-flex flex-fill">
                      <div class="card-header text-muted border-bottom-0">
                        <b><?=$row['judul'] ?> </b> |<small> <?=$row['views'] ?> netizen</small>
-                     </div>
+                     <br><?php $user_bisnis= $this->Crud_m->view_where('user_bisnis', array('username'=> $this->session->username))->row_array(); ?>
+                     <?php if ($row['id_projek'] == $user_bisnis['id_projek'] ){?>
+                         Pilihan Utama
+                        <?php } ?>
+                     
+                     
+                    </div>
                      <div class="card-body pt-0">
                        <div class="row">
                          <div class="col-12 text-center">
@@ -117,7 +123,10 @@
                      </div>
                      <div class="card-footer">
                        <div class="text-right">
-                         <a href="<?php echo base_url()?>ringkasan/hapus_temp/<?php echo $row['id_projek'] ?>" onclick="return confirm('Yakin untuk menghapus <?=$row['judul'] ?> secara permanen?')"  class="btn btn-sm bg-teal">
+                       <a href="<?php echo base_url()?>ringkasan/utama/<?php echo $row['id_projek'] ?>" onclick="return confirm('Yakin <?=$row['judul'] ?> untuk dijadikan tampilan utama? ')"  class="btn btn-sm bg-teal">
+                           Jadikan Tampilan Utama
+                         </a>
+                         <a href="<?php echo base_url()?>ringkasan/hapus_temp/<?php echo $row['id_projek'] ?>" onclick="return confirm('Yakin untuk menghapus <?=$row['judul'] ?> secara permanen?')"  class="btn btn-sm btn-danger">
                            <i class="fas fa-trash"></i> Hapus
                          </a>
                          <a href="<?php echo base_url()?>ringkasan/edit/<?php echo $row['id_projek'] ?>" class="btn btn-sm btn-primary">

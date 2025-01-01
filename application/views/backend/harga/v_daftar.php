@@ -102,7 +102,7 @@
                    <div class="card bg-light d-flex flex-fill">
                      <div class="card-header text-muted border-bottom-0">
                        <b><?=$row['judul'] ?> </b>
-                       <p>
+                       <br>
 
                        <?php $user_bisnis= $this->Crud_m->view_where('user_bisnis', array('username'=> $this->session->username))->row_array(); ?>
                         <?php if ($row['id_harga'] == $user_bisnis['id_harga'] ){?>
@@ -111,7 +111,7 @@
  
                         
                         
-                       </p>
+                       
                      </div>
                      <div class="card-body pt-0">
                        <div class="row">
