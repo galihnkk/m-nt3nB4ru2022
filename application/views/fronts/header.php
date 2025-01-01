@@ -25,7 +25,7 @@
             <div class="drop-wrap-wrap">
                 <div class="drop-wrap">
                   <div class="drop">                  
-                     <a  style="color:#ff0066;" href="<?php echo base_url()?>aspanel/home"><strong>BUKAASPANEL</strong></a>
+                     <a  style="color:#ff0066;" href="<?php echo base_url()?>aspanel/home"><strong>PANEL</strong></a>
                   </div>
                 </div>
             </div>
