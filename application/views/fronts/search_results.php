@@ -24,7 +24,7 @@
   <?php $this->load->view('fronts/css')?>
   <style>
     .hotel-choose {
-      height: 250px; 
+      height: 300px; 
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -81,9 +81,10 @@
                     </div>
                     <div class="col-md-6 responsive">
                       <div class="title">
-                      <span font-size="110px" height="100%"><strong><?php echo $post_new->judul?></strong></span>
+                      <span font-size="110px" height="100%"><strong><?php $judul = $post_new->judul;
+                          echo mb_strimwidth($judul, 0, 50, "...");?></strong></span>
                       <?php if(!empty($post_new->user_company_judul) && !empty($post_new->nama)) { ?>
-                      <br><p><?php echo $post_new->user_company_judul?> <?php echo $post_new->nama?></p>
+                      <br><p><?php echo $post_new->user_company_judul?><br> <?php echo $post_new->nama?></p>
                       <?php } ?>
                         <br>
                         <p>
