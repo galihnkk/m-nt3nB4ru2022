@@ -31,7 +31,7 @@
     </div>
 
     <div class="main-wraper">
-      <div class="container-fluid px100">
+      <div class="container-fluid container-wrapper">
         <br>
         <div class="row">
        
@@ -67,7 +67,7 @@
     </div>
 
     <!-- <div class="main-wraper">
-        <div class="container-fluid px100">
+        <div class="container-fluid container-wrapper">
     		<div class="row">
     			<div class="col-md-6">
     				<div class="second-title">
@@ -135,7 +135,7 @@
     		</div>
 		</div> -->
     <div class="main-wraper">
-        <div class="container-fluid px100">
+        <div class="container-fluid container-wrapper">
     	  <div class="row hidden-xs hidden-md hidden-sm">       
           			<div class="col-md-6">
           				<div class="second-title">
@@ -222,7 +222,7 @@
         
 		</div>
     <div class="main-wraper">
-        <div class="container-fluid px100">
+        <div class="container-fluid container-wrapper">
         <div class="row hidden-xs hidden-md hidden-sm">       
           			<div class="col-md-6">
           				<div class="second-title">
@@ -303,7 +303,7 @@
     		</div>
 		</div>
     <div class="main-wraper">
-        <div class="container-fluid px100">
+        <div class="container-fluid container-wrapper">
     		<div class="row hidden-xs hidden-md hidden-sm">       
           			<div class="col-md-6">
           				<div class="second-title">
@@ -384,7 +384,7 @@
     		</div>
 		</div>
     <div class="main-wraper">
-        <div class="container-fluid px100">
+        <div class="container-fluid container-wrapper">
     		<div class="row hidden-xs hidden-md hidden-sm">       
           			<div class="col-md-6">
           				<div class="second-title">
@@ -465,7 +465,7 @@
     		</div>
 		</div>
     <div class="main-wraper">
-        <div class="container-fluid px100">
+        <div class="container-fluid container-wrapper">
     		<div class="row hidden-xs hidden-md hidden-sm">       
           			<div class="col-md-6">
           				<div class="second-title">
@@ -546,7 +546,7 @@
     		</div>
 		</div>
     <div class="main-wraper">
-        <div class="container-fluid px100">
+        <div class="container-fluid container-wrapper">
     		<div class="row hidden-xs hidden-md hidden-sm">       
           			<div class="col-md-6">
           				<div class="second-title">
@@ -627,7 +627,7 @@
     		</div>
 		</div>
     <div class="main-wraper">
-        <div class="container-fluid px100">
+        <div class="container-fluid container-wrapper">
     		<div class="row hidden-xs hidden-md hidden-sm">       
           			<div class="col-md-6">
           				<div class="second-title">
@@ -708,7 +708,7 @@
     		</div>
 		</div>
     <div class="main-wraper">
-        <div class="container-fluid px100">
+        <div class="container-fluid container-wrapper">
     		<div class="row hidden-xs hidden-md hidden-sm">       
           			<div class="col-md-6">
           				<div class="second-title">
@@ -789,7 +789,7 @@
     		</div>
 		</div>
     <div class="main-wraper padd-90">
-        <div class="container-fluid px100">
+        <div class="container-fluid container-wrapper">
     		<div class="row hidden-xs hidden-md hidden-sm">       
           			<div class="col-md-6">
           				<div class="second-title">

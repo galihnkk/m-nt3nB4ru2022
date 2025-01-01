@@ -15,3 +15,22 @@
              js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.10&appId=129429343801925';
              fjs.parentNode.insertBefore(js, fjs);
            }(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+    // Fungsi untuk mendeteksi perangkat mobile
+    function isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    // Menambahkan class ke semua elemen yang memiliki class "content"
+    const contentElements = document.querySelectorAll('.container-wrapper');
+    if (isMobile()) {
+      contentElements.forEach(element => {
+        element.classList.add('px25');
+      });
+    } else {
+      contentElements.forEach(element => {
+        element.classList.add('px100');
+      });
+    }
+</script>
