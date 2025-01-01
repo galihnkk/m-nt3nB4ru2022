@@ -88,7 +88,7 @@
                         <input type="text" class="form-control"  name ="judul" value="<?php echo $records['judul'] ?>">
                       </div>
                     </div>
-                    <div class="col-12 col-sm-12">
+                    <!-- <div class="col-12 col-sm-12">
                       <label class="col-6 col-xs-4 col-form-label">Deskripsi</label>
                       <div class="col-12 col-xs-10">
                         <textarea class="textareas"  name ="deskripsi" style="width: 100%; height: 100px;" value="<?php echo $records['deskripsi'] ?>"><?php echo $records['deskripsi']?></textarea>
@@ -115,7 +115,7 @@
                       <div class="col-12 col-xs-10">
                         <iframe width="100%" height="200px" src="https://www.youtube.com/embed/<?php echo $records['youtube'] ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       </div>
-                    </div>
+                    </div> -->
                     <div class="col-12 col-sm-6">
                       <label class="col-4 col-xs-2 col-form-label">Gambar 1</label>
                       <div class="col-12 col-xs-10">

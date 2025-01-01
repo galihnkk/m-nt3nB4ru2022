@@ -88,7 +88,7 @@
                         <input type="text" class="form-control"  name ="judul" required="required">
                       </div>
                     </div>
-                    <div class="col-12 col-sm-12">
+                    <!-- <div class="col-12 col-sm-12">
                       <label class="col-6 col-xs-4 col-form-label">Deskripsi</label>
                       <div class="col-12 col-xs-10">
                         <textarea class="textarea"  name ="deskripsi" style="width: 100%; height: 100px;" ></textarea>
@@ -111,7 +111,7 @@
                       <div class="col-12 col-xs-10">
                         <input type="text" class="form-control"  name ="youtube" >
                       </div>
-                    </div>
+                    </div> -->
                     <div class="col-12 col-sm-6">
                       <label class="col-4 col-xs-2 col-form-label">Gambar 1</label>
                       <div class="col-12 col-xs-10">
