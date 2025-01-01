@@ -82,7 +82,9 @@
                     <div class="col-md-6 responsive">
                       <div class="title">
                       <span font-size="110px" height="100%"><strong><?php echo $post_new->judul?></strong></span>
+                      <?php if(!empty($post_new->user_company_judul) && !empty($post_new->nama)) { ?>
                       <br><p><?php echo $post_new->user_company_judul?> <?php echo $post_new->nama?></p>
+                      <?php } ?>
                         <br>
                         <p>
                           
