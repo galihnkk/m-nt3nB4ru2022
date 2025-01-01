@@ -5,9 +5,21 @@ class Search_model extends CI_Model {
         if (empty($query)) {
             return [];
         }
-        $this->db->like('judul', $query);
-        $this->db->order_by('RAND()'); // Add this line to randomize results
-        $results = $this->db->get('harga');
+        $keywords = explode(' ', $query);
+        $this->db->distinct();
+        $this->db->select('h.*, uc.user_company_judul');
+        $this->db->from('harga h');
+        $this->db->join('user_bisnis ub','h.harga_id_bisnis = ub.id_bisnis','inner');
+        $this->db->join('user_company uc','ub.user_company_account = uc.user_company_id','inner');
+        $this->db->group_start();
+        foreach ($keywords as $word) {
+            $this->db->or_like('h.judul', $word);
+            $this->db->or_like('uc.user_company_judul', $word);
+        }
+        $this->db->group_end();
+        $this->db->order_by('RAND()');
+        $results = $this->db->get();
+
         return $results->result();
     }
 }
