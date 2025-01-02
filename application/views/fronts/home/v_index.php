@@ -136,7 +136,7 @@
 		</div> -->
     <div class="main-wraper">
         <div class="container-fluid container-wrapper">
-    	  <div class="row hidden-xs hidden-md hidden-sm">       
+    	  <div class="row d-none d-lg-flex">       
           			<div class="col-md-6">
           				<div class="second-title">
           					<h2>Gedung</h2>
@@ -148,7 +148,7 @@
           					</div>
           			</div>            
     		</div>
-        <div class="row hidden-lg">       
+        <div class="row d-lg-none">       
                 <div class="col-md-6">
                   <div class="second-title">
                     <h2>Gedung</h2>
@@ -211,7 +211,7 @@
 							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
 					</div>
 				  </div>
-           <div class="hidden-lg col-xs-12"> 
+           <div class="d-lg-none col-xs-12"> 
                   <a class ="c-button small2 bg-dr-blue-2 hv-dr-blue-2-o " href="<?php echo base_url()?>vendors/kategori/gedung"><span>Lihat semua Gedung</span></a>
                 
           </div> 
@@ -223,7 +223,7 @@
 		</div>
     <div class="main-wraper">
         <div class="container-fluid container-wrapper">
-        <div class="row hidden-xs hidden-md hidden-sm">       
+        <div class="row d-none d-lg-flex">       
           			<div class="col-md-6">
           				<div class="second-title">
           					<h2>Dokumentasi</h2>
@@ -235,7 +235,7 @@
           					</div>
           			</div>            
     		</div>
-        <div class="row hidden-lg">       
+        <div class="row d-lg-none">       
                 <div class="col-md-6">
                   <div class="second-title">
                     <h2>Dokumentasi</h2>
@@ -297,14 +297,14 @@
 							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
 					</div>
 				  </div>
-          <div class="hidden-lg col-xs-12"> 
+          <div class="d-lg-none col-xs-12"> 
                   <a class ="c-button small2 bg-dr-blue-2 hv-dr-blue-2-o " href="<?php echo base_url()?>vendors/kategori/dokumentasi"><span>Lihat semua Dokumentasi</span></a>  
           </div>
     		</div>
 		</div>
     <div class="main-wraper">
         <div class="container-fluid container-wrapper">
-    		<div class="row hidden-xs hidden-md hidden-sm">       
+    		<div class="row d-none d-lg-flex">       
           			<div class="col-md-6">
           				<div class="second-title">
           					<h2>Catering</h2>
@@ -316,7 +316,7 @@
           					</div>
           			</div>            
     		</div>
-        <div class="row hidden-lg">       
+        <div class="row d-lg-none">       
                 <div class="col-md-6">
                   <div class="second-title">
                     <h2>Catering</h2>
@@ -378,14 +378,14 @@
 							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
 					</div>
 				  </div>
-          <div class="hidden-lg col-xs-12"> 
+          <div class="d-lg-none col-xs-12"> 
                   <a class ="c-button small2 bg-dr-blue-2 hv-dr-blue-2-o " href="<?php echo base_url()?>vendors/kategori/catering"><span>Lihat semua Catering</span></a>   
           </div> 
     		</div>
 		</div>
     <div class="main-wraper">
         <div class="container-fluid container-wrapper">
-    		<div class="row hidden-xs hidden-md hidden-sm">       
+    		<div class="row d-none d-lg-flex">       
           			<div class="col-md-6">
           				<div class="second-title">
           					<h2>Hair & Makeup</h2>
@@ -397,7 +397,7 @@
           					</div>
           			</div>            
     		</div>
-        <div class="row hidden-lg">       
+        <div class="row d-lg-none">       
                 <div class="col-md-6">
                   <div class="second-title">
                     <h2>Hair & Makeup</h2>
@@ -459,14 +459,14 @@
 							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
 					</div>
 				  </div>
-          <div class="hidden-lg col-xs-12"> 
+          <div class="d-lg-none col-xs-12"> 
                   <a class ="c-button small2 bg-dr-blue-2 hv-dr-blue-2-o " href="<?php echo base_url()?>vendors/kategori/mua"><span>Lihat semua Hair & Makeup</span></a>   
           </div> 
     		</div>
 		</div>
     <div class="main-wraper">
         <div class="container-fluid container-wrapper">
-    		<div class="row hidden-xs hidden-md hidden-sm">       
+    		<div class="row d-none d-lg-flex">       
           			<div class="col-md-6">
           				<div class="second-title">
           					<h2>Gaun & Busana</h2>
@@ -478,7 +478,7 @@
           					</div>
           			</div>            
     		</div>
-        <div class="row hidden-lg">       
+        <div class="row d-lg-none">       
                 <div class="col-md-6">
                   <div class="second-title">
                     <h2>Gaun & Busana</h2>
@@ -540,14 +540,14 @@
 							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
 					</div>
 				  </div>
-          <div class="hidden-lg col-xs-12"> 
+          <div class="d-lg-none col-xs-12"> 
                   <a class ="c-button small2 bg-dr-blue-2 hv-dr-blue-2-o " href="<?php echo base_url()?>vendors/kategori/mua"><span>Lihat semua Gaun & Busana</span></a>   
           </div> 
     		</div>
 		</div>
     <div class="main-wraper">
         <div class="container-fluid container-wrapper">
-    		<div class="row hidden-xs hidden-md hidden-sm">       
+    		<div class="row d-none d-lg-flex">       
           			<div class="col-md-6">
           				<div class="second-title">
           					<h2>Dekorasi & Tata Lampu</h2>
@@ -559,7 +559,7 @@
           					</div>
           			</div>            
     		</div>
-        <div class="row hidden-lg">       
+        <div class="row d-lg-none">       
                 <div class="col-md-6">
                   <div class="second-title">
                     <h2>Dekorasi & Tata Lampu</h2>
@@ -621,14 +621,14 @@
 							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
 					</div>
 				  </div>
-          <div class="hidden-lg col-xs-12"> 
+          <div class="d-lg-none col-xs-12"> 
                   <a class ="c-button small2 bg-dr-blue-2 hv-dr-blue-2-o " href="<?php echo base_url()?>vendors/kategori/dekorasi"><span>Lihat semua Dekorasi & Tata Lampu</span></a>   
           </div> 
     		</div>
 		</div>
     <div class="main-wraper">
         <div class="container-fluid container-wrapper">
-    		<div class="row hidden-xs hidden-md hidden-sm">       
+    		<div class="row d-none d-lg-flex">       
           			<div class="col-md-6">
           				<div class="second-title">
           					<h2>Souvenir</h2>
@@ -640,7 +640,7 @@
           					</div>
           			</div>            
     		</div>
-        <div class="row hidden-lg">       
+        <div class="row d-lg-none">       
                 <div class="col-md-6">
                   <div class="second-title">
                     <h2>Souvenir</h2>
@@ -702,14 +702,14 @@
 							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
 					</div>
 				  </div>
-          <div class="hidden-lg col-xs-12"> 
+          <div class="d-lg-none col-xs-12"> 
                   <a class ="c-button small2 bg-dr-blue-2 hv-dr-blue-2-o " href="<?php echo base_url()?>vendors/kategori/souvenir"><span>Lihat semua Souvenir</span></a>   
           </div> 
     		</div>
 		</div>
     <div class="main-wraper">
         <div class="container-fluid container-wrapper">
-    		<div class="row hidden-xs hidden-md hidden-sm">       
+    		<div class="row d-none d-lg-flex">       
           			<div class="col-md-6">
           				<div class="second-title">
           					<h2>Entertain</h2>
@@ -721,7 +721,7 @@
           					</div>
           			</div>            
     		</div>
-        <div class="row hidden-lg">       
+        <div class="row d-lg-none">       
                 <div class="col-md-6">
                   <div class="second-title">
                     <h2>Entertain</h2>
@@ -783,14 +783,14 @@
 							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
 					</div>
 				  </div>
-          <div class="hidden-lg col-xs-12"> 
+          <div class="d-lg-none col-xs-12"> 
                   <a class ="c-button small2 bg-dr-blue-2 hv-dr-blue-2-o " href="<?php echo base_url()?>vendors/kategori/seni-musik"><span>Lihat semua Entertain</span></a>   
           </div> 
     		</div>
 		</div>
     <div class="main-wraper padd-90">
         <div class="container-fluid container-wrapper">
-    		<div class="row hidden-xs hidden-md hidden-sm">       
+    		<div class="row d-none d-lg-flex">       
           			<div class="col-md-6">
           				<div class="second-title">
           					<h2>Master of Ceremony</h2>
@@ -802,7 +802,7 @@
           					</div>
           			</div>            
     		</div>
-        <div class="row hidden-lg">       
+        <div class="row d-lg-none">       
                 <div class="col-md-6">
                   <div class="second-title">
                     <h2>Master of Ceremony</h2>
@@ -864,7 +864,7 @@
 							<div class="swiper-arrow-right arrows-travel"><span class="fa fa-angle-right"></span></div>
 					</div>
 				  </div>
-          <div class="hidden-lg col-xs-12"> 
+          <div class="d-lg-none col-xs-12"> 
                   <a class ="c-button small2 bg-dr-blue-2 hv-dr-blue-2-o " href="<?php echo base_url()?>vendors/kategori/mc"><span>Lihat semua Master of Ceremony</span></a>   
           </div> 
     		</div>
