@@ -1,7 +1,5 @@
-
 <?php $this->load->view('backend/top')?>
 <?php $this->load->view('backend/menu')?>
-
 
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -77,7 +75,7 @@
             <div class="card-body pb-0">
               <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 d-flex">
-                  <?php $attributes = array('class'=>'form-horizontal','role'=>'form');
+                  <?php $attributes = array('class'=>'form-horizontal','role'=>'form', 'enctype'=>'multipart/form-data');
                   echo form_open_multipart('ringkasan/tambah',$attributes); ?>
                   <h4><b>Tambah Ringkasan</b></h4>
                   <div class="row">
@@ -112,6 +110,10 @@
                         <input type="text" class="form-control"  name ="youtube" >
                       </div>
                     </div> -->
+                    <input type="hidden" name="deskripsi" value="">
+                    <input type="hidden" name="meta_deskripsi" value="">
+                    <input type="hidden" name="keyword" value="">
+                    <input type="hidden" name="youtube" value="">
                     <div class="col-12 col-sm-6">
                       <label class="col-4 col-xs-2 col-form-label">Gambar 1</label>
                       <div class="col-12 col-xs-10">
