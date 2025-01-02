@@ -25,7 +25,7 @@
   <style>
   /* Mengatur flexbox layout agar elemen dalam container lebih rapi */
   .hotel-choose {
-    height: auto; /* Jangan fix height agar bisa menyesuaikan konten */
+    height: 300px; /* Jangan fix height agar bisa menyesuaikan konten */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
